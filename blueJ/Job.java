@@ -7,48 +7,77 @@
  */
 public class Job
 {
+    
     private int id;
     private String name;
     private int fee;
     private String category;
-    
-    public Job(){
-        
-    }
-    
-    public static int getid(){
-     return 0;    
-    }
-    
-    public static String getName(){
-     return "oop";
+    private Recruiter recruiter;
 
+    /**
+     * Constructor for objects of class Job
+     */
+    public Job(int id, String name, Recruiter recruiter, int fee, String category)
+    {
+      this.id = id;
+      this.name = name;
+      this.recruiter = recruiter;
+      this.fee = fee;
+      this.category = category;
+    }
+
+    
+    public int getId()
+    {
+        return this.id;
     }
     
-    public static int getFee(){
-        return 0;
+    public String getName()
+    {
+        return this.name;
+    }
+    
+    public int getFee()
+    {
+        return this.fee;
+    }
+    
+    public String getCategory()
+    {
+        return this.category;
+    }
+    
+    public Recruiter getRecruiter ()
+    {
+        return this.recruiter;
+    }
+    
+    public void setId(int id)
+    {
+       this.id = id;
+    }
+    
+    public void setName(String name)
+    {
+       this.name = name;
+    }
+    
+    public void setRecruiter(Recruiter recruiter)
+    {
+         this.recruiter = recruiter;
+    }
+    public void setFee(int fee)
+    {
+       this.fee = fee;
+    }
+    
+    public void setCategory(String category)
+    {
+        this.category = category;
+    }
+    
+    public void printData()
+    {
         
     }
-    
-    public static String getCategory(){
-        return "oop";
-    }
-    
-    public static void setID(int id){
-        
-    }
-    
-    public static void setName(String name){
-        
-    }
-    
-    public static void setFee(int fee){
-        
-    }
-    
-    public static void setCategory(String category){
-        
-    }
-    
-    
 }

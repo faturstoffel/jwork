@@ -1,39 +1,65 @@
 
 /**
- * Write a description of class DatabaseJob here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * Class DatabaseJob ini akan menjadi database untuk penyimpanan informasi dari job yang ada
+ * Access modifier bersifat public pada method dan private pada variabel
+ * Pada class ini menggunakan getter dengan access modifier public
+ * @author Fatur Rahman Stoffel
+ * @version 18/03/21
  */
 public class DatabaseJob
 {
-    // instance variables - replace the example below with your own
+    // Deklarasi dari variabel yang digunakan
+    // dimana bersifat private, sehingga hanya bisa diakses oleh class sendiri
     private String [] listJob;
 
-    /**
-     * Constructor for objects of class DatabaseJob
+    /** 
+     * Disini konstruktor DatabaseJob bersifat default dan bertipe public
      */
     public DatabaseJob()
     {
-        // initialise instance variables
+        
         
     }
-
+    
+    /**
+     * Method addJob ini mempunyai tipe boolean
+     * parameter yang digunakan adalah job
+     * Betujuan untuk menambahkan data job baru pada database
+     * @return false jika bertipe data boolean
+     * @param job sebagai input
+     */
     public boolean addJob(Job job)
     {
       return false;   
     }
     
+    /**
+     * Method removeJob ini mempunyai tipe boolean
+     * Parameter yang digunakan adalah job
+     * Bertujuan untuk menghapus data job
+     * @return false jika bertipe data boolean
+     * @param job digunakan sebagai input
+     */
     public boolean removeJob(Job job)
     {
     return false;   
     }
     
-      public Job getJob()
+    /**
+    * Berikutnya terdapat method getter bernama getJob 
+    * @return null mengembalikkan nilai null 
+    */
+    public Job getJob()
     {
         return null;
     }
     
+    /**
+    * Berikutnya terdapat method getter bernama getListJob
+    * @return null mengembalikkan nilai null 
+    * Betipe string array
+    * tidak ada parameter yang digunakan pada method getListJob ini
+    */
     public String [] getListJob ()
     {
         return null;

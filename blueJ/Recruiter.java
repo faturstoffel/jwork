@@ -142,6 +142,10 @@ public class Recruiter
     public void printData()
     {
         System.out.println(getName());
+        System.out.println(getId());
+        System.out.println(getEmail());
+        System.out.println(getPhoneNumber());
+        System.out.println(getLocation());
     }
     
 }

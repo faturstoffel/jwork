@@ -132,6 +132,10 @@ public class Jobseeker
          public void printData()
          {
              System.out.println(getName());
+             System.out.println(getId());
+             System.out.println(getEmail());
+             System.out.println(getPassword());
+             System.out.println(getJoinDate());
         }
     }
 

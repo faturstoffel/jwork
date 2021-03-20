@@ -138,6 +138,11 @@ public class Job
      */
     public void printData()
     {
-        
+        System.out.println(getId());
+        System.out.println(getName());
+        System.out.println(getFee());
+        System.out.println(getCategory());
+        System.out.println(getRecruiter());    
+    
     }
 }

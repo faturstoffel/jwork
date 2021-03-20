@@ -97,5 +97,7 @@ public class Location
     public void printData()
     {
         System.out.println(getProvince()); //untuk print data
+        System.out.println(getCity());
+        System.out.println(getDescription());
     }
 }

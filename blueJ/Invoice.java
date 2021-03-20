@@ -137,7 +137,11 @@ public class Invoice
      */
     public void printData()
     {
-        
+        System.out.println(getId());
+        System.out.println(getIdJob());
+        System.out.println(getDate());
+        System.out.println(getTotalFee());
+        System.out.println(getJobseeker());
     }
 }
 

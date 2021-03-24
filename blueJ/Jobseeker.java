@@ -131,11 +131,11 @@ public class Jobseeker
          */
          public void printData()
          {
-             System.out.println(getName());
-             System.out.println(getId());
-             System.out.println(getEmail());
-             System.out.println(getPassword());
-             System.out.println(getJoinDate());
+             System.out.println("Name: \n" + getName());
+             System.out.println("ID: \n" + getId());
+             System.out.println("Email: \n" + getEmail());
+             System.out.println("Password: \n" + getPassword());
+             System.out.println("Join Date: \n" + getJoinDate());
         }
     }
 

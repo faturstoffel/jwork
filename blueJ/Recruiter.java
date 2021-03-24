@@ -141,11 +141,11 @@ public class Recruiter
      */
     public void printData()
     {
-        System.out.println(getName());
-        System.out.println(getId());
-        System.out.println(getEmail());
-        System.out.println(getPhoneNumber());
-        System.out.println(getLocation());
+        System.out.println("Name: \n" + getName());
+        System.out.println("ID: \n" + getId());
+        System.out.println("Email: \n" + getEmail());
+        System.out.println("Phone Number: \n" + getPhoneNumber());
+        System.out.println("Location: \n" + getLocation());
     }
     
 }

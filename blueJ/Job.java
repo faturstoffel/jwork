@@ -138,11 +138,11 @@ public class Job
      */
     public void printData()
     {
-        System.out.println(getId());
-        System.out.println(getName());
-        System.out.println(getFee());
-        System.out.println(getCategory());
-        System.out.println(getRecruiter());    
+        System.out.println("ID: \n"+ getId());
+        System.out.println("Name: \n" + getName());
+        System.out.println("Fee: \n" + getFee());
+        System.out.println("Category: \n" + getCategory());
+        System.out.println("Recruiter : \n" + getRecruiter());    
     
     }
 }

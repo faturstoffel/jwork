@@ -13,8 +13,8 @@ public class Job
     private int id;
     private String name;
     private int fee;
-    private String category;
     private Recruiter recruiter;
+    private JobCategory category;
 
     /** 
      * Disini konstruktor Job bersifat default
@@ -24,7 +24,7 @@ public class Job
      * @param category untuk input variabel category
      * @param recruiter untuk input variabel recruiter
      */
-    public Job(int id, String name, Recruiter recruiter, int fee, String category)
+    public Job(int id, String name, Recruiter recruiter, int fee, JobCategory category)
     {
         /**
          * untuk keyword "this", digunakan untuk mereferensikan variabel yang ada dalam class
@@ -72,7 +72,7 @@ public class Job
     * dengan return type string
     * @return province mengembalikkan nilai didalam variabel category
     */
-    public String getCategory()
+    public  JobCategory getCategory()
     {
         return category;
     }
@@ -127,7 +127,7 @@ public class Job
     * Selanjutnya terdapat method setter bernama setCategory untuk mengisi nilai variabel category
     * dengan return type void dan parameter bernama category
     */
-    public void setCategory(String category)
+    public void setCategory(JobCategory category)
     {
         this.category = category;
     }
@@ -137,7 +137,8 @@ public class Job
      * Mempunyai return type void
      */
     public void printData()
-    {
+    { 
+        System.out.println("==============JOB==============");
         System.out.println("ID: \n"+ getId());
         System.out.println("Name: \n" + getName());
         System.out.println("Fee: \n" + getFee());

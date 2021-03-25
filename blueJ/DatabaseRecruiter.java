@@ -10,16 +10,12 @@ public class DatabaseRecruiter
 {
     // Deklarasi dari variabel yang digunakan
     // dimana bersifat private, sehingga hanya bisa diakses oleh class sendiri
-    private String [] listRecruiter;
+    private static String [] listRecruiter;
 
     /** 
      * Disini konstruktor DatabaseRecruiter bersifat default dan bertipe public
      */
-    public DatabaseRecruiter()
-    {
-      
-        
-    }
+    
     
     /**
      * Method addRecruiter ini mempunyai tipe boolean
@@ -28,7 +24,7 @@ public class DatabaseRecruiter
      * @return false jika bertipe data boolean
      * @param recruiter sebagai input
      */
-    public boolean addRecruiter(Recruiter recruiter)
+    public static boolean addRecruiter(Recruiter recruiter)
     {
         
         return false;
@@ -41,7 +37,7 @@ public class DatabaseRecruiter
      * @return false jika bertipe data boolean
      * @param recruiter digunakan sebagai input
      */
-    public boolean removeRecruiter(Recruiter recruiter)
+    public static boolean removeRecruiter(Recruiter recruiter)
     {
       return false;   
     }
@@ -50,7 +46,7 @@ public class DatabaseRecruiter
     * Berikutnya terdapat method getter bernama getRecruiter
     * @return null mengembalikkan nilai null 
     */
-    public Recruiter getRecruiter()
+    public static Job getRecruiter()
     {
         return null;
     }
@@ -61,9 +57,9 @@ public class DatabaseRecruiter
     * Betipe string array
     * tidak ada parameter yang digunakan pada method getListRecruiter ini
     */
-    public String [] getListRecruiter()
+    public static String [] getListRecruiter()
     {
-        return null;
+        return listRecruiter;
     }
 
  

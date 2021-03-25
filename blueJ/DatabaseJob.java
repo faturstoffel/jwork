@@ -10,16 +10,9 @@ public class DatabaseJob
 {
     // Deklarasi dari variabel yang digunakan
     // dimana bersifat private, sehingga hanya bisa diakses oleh class sendiri
-    private String [] listJob;
+    private static String [] listJob;
 
-    /** 
-     * Disini konstruktor DatabaseJob bersifat default dan bertipe public
-     */
-    public DatabaseJob()
-    {
-        
-        
-    }
+   
     
     /**
      * Method addJob ini mempunyai tipe boolean
@@ -28,7 +21,7 @@ public class DatabaseJob
      * @return false jika bertipe data boolean
      * @param job sebagai input
      */
-    public boolean addJob(Job job)
+    public static boolean addJob(Job job)
     {
       return false;   
     }
@@ -40,7 +33,7 @@ public class DatabaseJob
      * @return false jika bertipe data boolean
      * @param job digunakan sebagai input
      */
-    public boolean removeJob(Job job)
+    public static boolean removeJob(Job job)
     {
     return false;   
     }
@@ -49,7 +42,7 @@ public class DatabaseJob
     * Berikutnya terdapat method getter bernama getJob 
     * @return null mengembalikkan nilai null 
     */
-    public Job getJob()
+    public static Job getJob()
     {
         return null;
     }
@@ -60,9 +53,9 @@ public class DatabaseJob
     * Betipe string array
     * tidak ada parameter yang digunakan pada method getListJob ini
     */
-    public String [] getListJob ()
+    public static String [] getListJob ()
     {
-        return null;
+        return listJob;
     }
     
 }

@@ -13,17 +13,38 @@ public class JWork
         Location location2 = new Location("DKI Jakarta", "Jakarta", "Rumah");
         Recruiter recruiter1 = new Recruiter(1, "fatur", "fatur@gmail.com", "12344", location1);
         Recruiter recruiter2 = new Recruiter(2, "rahman", "rahman@gmail.com", "08212345678", location2);
-        Job job1 = new Job(1, "stoffel", recruiter1, 111111, "tech");
-        Job job2 = new Job(2, "stoffel", recruiter2, 100303, "tech");
         Jobseeker jobseeker1 = new Jobseeker(1, "fatur", "fatur@coba.com", "12333", "10 Maret 2021");
         Jobseeker jobseeker2 = new Jobseeker(3, "bagus", "bagus@gmail.com", "12976", "12 Maret 2021");
         Invoice invoice1 = new Invoice(1, 2, "November", 2, jobseeker1);
         Invoice invoice2 = new Invoice(233,123, "18 agustus 2022", 300000, jobseeker2);
-        
+        JobCategory category1 = JobCategory.WebDeveloper;
+        JobCategory category2 = JobCategory.FrontEnd;
+        JobCategory category3 = JobCategory.BackEnd;
+        JobCategory category4 = JobCategory.UI;
+        JobCategory category5 = JobCategory.UX;
+        JobCategory category6 = JobCategory.Devops;
+        JobCategory category7 = JobCategory.DataScientist;
+        JobCategory category8 = JobCategory.DataAnalyst;
+        System.out.println(category1);
+        System.out.println(category2);
+        System.out.println(category3);
+        System.out.println(category4);
+        System.out.println(category5);
+        System.out.println(category6);
+        System.out.println(category7);
+        System.out.println(category8);
         System.out.println(recruiter2.getName());
         recruiter2.setName("Aslab");
         System.out.println(recruiter2.getName());
-        job1.printData();
+
+        PaymentType type1 = PaymentType.BankPayment;
+        PaymentType type2 = PaymentType.EwalletPayment;
+        System.out.println(type1);
+        System.out.println(type2);
+        System.out.println(recruiter2.getName());
+        recruiter2.setName("Aslab");
+       
+
     }
 
 }

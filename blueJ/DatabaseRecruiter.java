@@ -12,10 +12,7 @@ public class DatabaseRecruiter
     // dimana bersifat private, sehingga hanya bisa diakses oleh class sendiri
     private static String [] listRecruiter;
 
-    /** 
-     * Disini konstruktor DatabaseRecruiter bersifat default dan bertipe public
-     */
-    
+  
     
     /**
      * Method addRecruiter ini mempunyai tipe boolean

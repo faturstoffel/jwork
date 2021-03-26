@@ -2,28 +2,20 @@
 /**
  * Enumeration class PaymentType - write a description of the enum class here
  *
- * @author (your name here)
- * @version (version number or date here)
+ * @author Fatur Rahman Stoffel
+ * @version 25/02/2021
  */
 public enum PaymentType {
     BankPayment("Bank Payment"),
     EwalletPayment("E-wallet Payment");
 
-    private String payment;
-    private PaymentType(String payment) {
-        this.payment = payment;
+    private final String type;
+    private PaymentType(String type) {
+        this.type = type;
     }
     @Override
     public String toString(){
-        return payment;
+        return type;
     }
 
-    // Driver method
-    public static void main(String[] args)
-    {
-        PaymentType p1 = PaymentType.BankPayment;
-        System.out.println(p1);
-        PaymentType p2 = PaymentType.EwalletPayment;
-        System.out.println(p2);
-    }
 }

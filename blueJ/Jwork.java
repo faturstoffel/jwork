@@ -17,6 +17,7 @@ public class JWork
         Jobseeker jobseeker2 = new Jobseeker(3, "bagus", "bagus@gmail.com", "12976", "12 Maret 2021");
         Invoice invoice1 = new Invoice(1, 2, "November", 2, jobseeker1);
         Invoice invoice2 = new Invoice(233,123, "18 agustus 2022", 300000, jobseeker2);
+        
         JobCategory category1 = JobCategory.WebDeveloper;
         JobCategory category2 = JobCategory.FrontEnd;
         JobCategory category3 = JobCategory.BackEnd;
@@ -36,15 +37,13 @@ public class JWork
         System.out.println(recruiter2.getName());
         recruiter2.setName("Aslab");
         System.out.println(recruiter2.getName());
-
+        Job job1 = new Job (1, "Bagus Bagas", recruiter2, 1000, category7);
         PaymentType type1 = PaymentType.BankPayment;
         PaymentType type2 = PaymentType.EwalletPayment;
         System.out.println(type1);
         System.out.println(type2);
-        System.out.println(recruiter2.getName());
-        recruiter2.setName("Aslab");
-       
-
+        System.out.println("\n");
+        job1.printData();
     }
 
 }

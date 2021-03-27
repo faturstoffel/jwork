@@ -2,13 +2,13 @@
 /**
  * Enumeration class InvoiceStatus - write a description of the enum class here
  *
- * @author (your name here)
- * @version (version number or date here)
+ * @author Fatur Rahman Stoffel
+ * @version 27/03/2021
  */
 public enum InvoiceStatus
 {
     OnGoing("On Going"),
-    Finished("Finished:"),
+    Finished("Finished"),
     Cancelled("Cancelled");
     
     private final String status;

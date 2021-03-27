@@ -148,7 +148,7 @@ public class Invoice
          this.paymentType = paymentType;   
     }
     
-    public void InvoiceStatus(InvoiceStatus status){
+    public void setInvoiceStatus(InvoiceStatus status){
          this.status = status   ;
     }
     /**
@@ -162,7 +162,8 @@ public class Invoice
         System.out.println("ID Job: \n" + getIdJob());
         System.out.println("Date : \n" + getDate());
         System.out.println("Total Fee: \n" + getTotalFee());
-        System.out.println("Job Seeker: \n" + getJobseeker());
+        System.out.println("Status: \n" + getInvoiceStatus());
+        System.out.println("Job Seeker: \n" + getJobseeker().getName());
     }
 }
 

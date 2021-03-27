@@ -16,6 +16,8 @@ public class Invoice
     private String date;
     private int totalFee;
     private Jobseeker jobseeker;
+    private PaymentType paymentType;
+    private InvoiceStatus status;
 
     /** 
      * Disini konstruktor Invoice bersifat default
@@ -26,7 +28,7 @@ public class Invoice
      * @param totalFee untuk input variabel totalFee
      * @param jobseeker untuk variabel jobseeker
      */
-    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker)
+    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker, PaymentType paymentType, InvoiceStatus status )
     {
          /**
          * untuk keyword "this", digunakan untuk mereferensikan variabel yang ada dalam class
@@ -37,6 +39,8 @@ public class Invoice
     this.date = date;
     this.totalFee = totalFee;
     this.jobseeker = jobseeker;
+    this.paymentType = paymentType;
+    this.status = status;
     }
 
       
@@ -89,6 +93,15 @@ public class Invoice
         return jobseeker;
     }
     
+    public PaymentType getPaymentType()
+    {
+         return paymentType;   
+    }
+    
+    public InvoiceStatus getInvoiceStatus()
+    {
+         return status;   
+    }
     /**
     * Selanjutnya terdapat method setter bernama setId untuk mengisi nilai variabel id
     * dengan return type void dan parameter bernama id
@@ -131,12 +144,20 @@ public class Invoice
         this.totalFee = totalFee;
     }
     
+    public void setPaymentType(PaymentType paymentType){
+         this.paymentType = paymentType;   
+    }
+    
+    public void InvoiceStatus(InvoiceStatus status){
+         this.status = status   ;
+    }
     /**
      * Selanjutnya terdapat method bernama printData yang berfungsi untuk mencetak isi data 
      * Mempunyai return type void
      */
     public void printData()
     {
+        System.out.println("=========INVOICE==========");
         System.out.println("ID: \n" + getId());
         System.out.println("ID Job: \n" + getIdJob());
         System.out.println("Date : \n" + getDate());

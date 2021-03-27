@@ -8,15 +8,17 @@
 public class JWork
 {
    public static void main(String[] args){
-       
+     InvoiceStatus status1 = InvoiceStatus.OnGoing;
+     InvoiceStatus status2 = InvoiceStatus.Finished;
+     InvoiceStatus status3 = InvoiceStatus.Cancelled;
         Location location1 = new Location("Jayapura", "Papua", "kota");
         Location location2 = new Location("DKI Jakarta", "Jakarta", "Rumah");
         Recruiter recruiter1 = new Recruiter(1, "fatur", "fatur@gmail.com", "12344", location1);
         Recruiter recruiter2 = new Recruiter(2, "rahman", "rahman@gmail.com", "08212345678", location2);
         Jobseeker jobseeker1 = new Jobseeker(1, "fatur", "fatur@coba.com", "12333", "10 Maret 2021");
         Jobseeker jobseeker2 = new Jobseeker(3, "bagus", "bagus@gmail.com", "12976", "12 Maret 2021");
-        Invoice invoice1 = new Invoice(1, 2, "November", 2, jobseeker1);
-        Invoice invoice2 = new Invoice(233,123, "18 agustus 2022", 300000, jobseeker2);
+        Invoice invoice1 = new Invoice(1, 1, "20 Maret 2021", 4000000, jobseeker1,status1);
+        
         
         JobCategory category1 = JobCategory.WebDeveloper;
         JobCategory category2 = JobCategory.FrontEnd;
@@ -44,6 +46,11 @@ public class JWork
         System.out.println(type2);
         System.out.println("\n");
         job1.printData();
+        invoice1.printData();
+     System.out.println(status1);
+     System.out.println(status2);
+     System.out.println(status3);
+        
     }
 
 }

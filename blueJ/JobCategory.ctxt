@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=JobCategory
-comment0.text=\r\n\ Enumeration\ class\ JobCategory\ -\ write\ a\ description\ of\ the\ enum\ class\ here\r\n\r\n\ @author\ Fatur\ Rahman\ Stoffel\r\n\ @version\ 25/03/2021\r\n
+comment0.text=\r\n\ Enum\ JobCategory\ berisi\ variabel\ konstant\ yang\ didalamnya\ terdapat\ Web\ developer,\ Front\ End,\ Back\ End,\ UI,\ UX,\ Devops,\ Data\ Scientist,\ Data\ Analyst\r\n\ Variabel-variabel\ ini\ merupakan\ final\ variabel\ yang\ tidak\ bisa\ untuk\ diganti\ \r\n\ @author\ Fatur\ Rahman\ Stoffel\r\n\ @version\ 25/03/2021\r\n
 comment1.params=category
 comment1.target=JobCategory(java.lang.String)
 comment2.params=

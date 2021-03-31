@@ -1,12 +1,16 @@
 #BlueJ class context
 comment0.target=DatabaseJobseeker
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ DatabaseJobseeker\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Class\ DatabaseJobSeeker\ ini\ akan\ menjadi\ database\ untuk\ penyimpanan\ informasi\ dari\ jobseeker\ yang\ ada\ \r\n\ Access\ modifier\ bersifat\ public\ pada\ method\ dan\ private\ pada\ variabel\r\n\ Pada\ class\ ini\ menggunakan\ getter\ dengan\ access\ modifier\ public\r\n\ @author\ Fatur\ Rahman\ Stoffel\r\n\ @version\ 27/03/2021\r\n
 comment1.params=jobseeker
 comment1.target=boolean\ addJobseeker(Jobseeker)
+comment1.text=\r\n\ Method\ addJobseeker\ ini\ mempunyai\ tipe\ boolean\r\n\ parameter\ yang\ digunakan\ adalah\ jobseeker\r\n\ Betujuan\ untuk\ menambahkan\ data\ jobseeker\ baru\ pada\ database\r\n\ @return\ false\ jika\ bertipe\ data\ boolean\r\n\ @param\ jobseeker\ sebagai\ input\r\n
 comment2.params=jobseeker
 comment2.target=boolean\ removeJobseeker(Jobseeker)
+comment2.text=\r\n\ Method\ removeJobseeker\ ini\ mempunyai\ tipe\ boolean\r\n\ parameter\ yang\ digunakan\ adalah\ jobseeker\r\n\ Betujuan\ untuk\ menghapus\ data\ jobseeker\ pada\ database\r\n\ @return\ false\ jika\ bertipe\ data\ boolean\r\n\ @param\ jobseeker\ sebagai\ input\r\n
 comment3.params=
 comment3.target=Job\ getJobseeker()
+comment3.text=\r\n\ Berikutnya\ terdapat\ method\ getter\ bernama\ getJobseeker\r\n\ @return\ null\ mengembalikkan\ nilai\ null\ \r\n
 comment4.params=
 comment4.target=java.lang.String[]\ getListJobseeker()
+comment4.text=\r\n\ Berikutnya\ terdapat\ method\ getter\ bernama\ getListJobseeker\r\n\ @return\ null\ mengembalikkan\ nilai\ null\ \r\n\ Betipe\ string\ array\r\n\ tidak\ ada\ parameter\ yang\ digunakan\ pada\ method\ getListJobseeker\ ini\r\n
 numComments=5

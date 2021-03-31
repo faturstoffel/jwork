@@ -1,7 +1,7 @@
 
 /**
- * Enumeration class JobCategory - write a description of the enum class here
- *
+ * Enum JobCategory berisi variabel konstant yang didalamnya terdapat Web developer, Front End, Back End, UI, UX, Devops, Data Scientist, Data Analyst
+ * Variabel-variabel ini merupakan final variabel yang tidak bisa untuk diganti 
  * @author Fatur Rahman Stoffel
  * @version 25/03/2021
  */
@@ -16,13 +16,12 @@ public enum JobCategory
     DataScientist ("Data Scientist"),
     DataAnalyst ("Data Analyst");
     
-    private final String category;
-    
-    private JobCategory(String category){
+    private String category;
+    JobCategory(String category){
      this.category = category;   
     }
     
-    @Override
+    @Override // Berfungsi untuk memberitahu kompiler, bahwa elemen merupakan sebuah override
     public String toString(){
          return category;   
     }

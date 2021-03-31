@@ -17,7 +17,7 @@ public class Invoice
     private int totalFee;
     private Jobseeker jobseeker;
     private PaymentType paymentType;
-    private InvoiceStatus status;
+    private InvoiceStatus invoiceStatus;
 
     /** 
      * Disini konstruktor Invoice bersifat default
@@ -28,7 +28,7 @@ public class Invoice
      * @param totalFee untuk input variabel totalFee
      * @param jobseeker untuk variabel jobseeker
      */
-    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker, PaymentType paymentType, InvoiceStatus status )
+    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker, PaymentType paymentType, InvoiceStatus invoiceStatus )
     {
          /**
          * untuk keyword "this", digunakan untuk mereferensikan variabel yang ada dalam class
@@ -40,7 +40,7 @@ public class Invoice
     this.totalFee = totalFee;
     this.jobseeker = jobseeker;
     this.paymentType = paymentType;
-    this.status = status;
+    this.invoiceStatus = invoiceStatus;
     }
 
       
@@ -100,7 +100,7 @@ public class Invoice
     
     public InvoiceStatus getInvoiceStatus()
     {
-         return status;   
+         return invoiceStatus;   
     }
     /**
     * Selanjutnya terdapat method setter bernama setId untuk mengisi nilai variabel id
@@ -149,7 +149,7 @@ public class Invoice
     }
     
     public void setInvoiceStatus(InvoiceStatus status){
-         this.status = status   ;
+         this.invoiceStatus = invoiceStatus   ;
     }
     /**
      * Selanjutnya terdapat method bernama printData yang berfungsi untuk mencetak isi data 

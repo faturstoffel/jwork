@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=Invoice
 comment0.text=\r\n\ Class\ ini\ bertujuan\ untuk\ memberikan\ invoice\ total\ gaji\ dari\ pekerja\r\n\ dimana\ akan\ ada\ id,\ id\ dari\ pekerjaan,\ tanggal,\ total\ gaji\ dan\ juga\ nama\ dari\ pekerja\r\n\ Untuk\ access\ modifier\ bersifat\ public\ pada\ method\ dan\ private\ pada\ variabel\ yang\ ada\r\n\r\n\ @author\ Fatur\ Rahman\ Stoffel\r\n\ @version\ 18/03/2021\r\n
-comment1.params=id\ idJob\ date\ totalFee\ jobseeker\ paymentType\ status
+comment1.params=id\ idJob\ date\ totalFee\ jobseeker\ paymentType\ invoiceStatus
 comment1.target=Invoice(int,\ int,\ java.lang.String,\ int,\ Jobseeker,\ PaymentType,\ InvoiceStatus)
 comment1.text=\ \r\n\ Disini\ konstruktor\ Invoice\ bersifat\ default\r\n\ dengan\ parameter\r\n\ @param\ id\ untuk\ input\ variabel\ id\r\n\ @param\ idJob\ untuk\ input\ variabel\ idJob\r\n\ @param\ date\ untuk\ input\ variabel\ date\r\n\ @param\ totalFee\ untuk\ input\ variabel\ totalFee\r\n\ @param\ jobseeker\ untuk\ variabel\ jobseeker\r\n
 comment10.params=idJob

@@ -8,14 +8,14 @@
 public class JWork
 {
    
-    public static void main (String [] args) 
+      public static void main (String [] args) 
     {
         Location location1 = new Location("Jakarta", "Jakarta", "kota");
-        Location location2 = new Location ("Papua", "Jayapura", "Rumah");
-        Recruiter recruiter1 = new Recruiter(1, "Fatur", "fatur@gmail.com", "1234", location1);
-        Recruiter recruiter2 = new Recruiter(123, "stoffel", "stoffel@gmail.com", "0821233455", location2);
-        Jobseeker jobseeker1 = new Jobseeker(1, "rahman", "rahman@gmail.com", "123", "December 2022");
-        Jobseeker jobseeker2 = new Jobseeker(567, "bagus", "bagus@gmail.com", "hdhayw3", "13 februrari 2021");
+        Location location2 = new Location ("DKI Jakarta", "Jakarta", "Rumah");
+        Recruiter recruiter1 = new Recruiter(1, "fatur", "fatur@gmail.com", "7282", location1);
+        Recruiter recruiter2 = new Recruiter(123, "bagus", "bagus@gmail.com", "0812345678", location2);
+        Jobseeker jobseeker1 = new Jobseeker(1, "Rahman", "rahman@gmail.com", "3456", "April 2021");
+        Jobseeker jobseeker2 = new Jobseeker(567, "agus", "agus@gmail.com", "ei900", "13 maret 2021");
         
     
         
@@ -38,7 +38,7 @@ public class JWork
         System.out.println(category7);
         System.out.println(category8);
         
-        Job job1 = new Job (1, "junior dev", recruiter2, 1000, category7);
+        Job job1 = new Job (1, "Gilang", recruiter2, 1000, category7);
         
         
         PaymentType type1 = PaymentType.BankPayment;
@@ -53,7 +53,7 @@ public class JWork
         System.out.println(status2);
         System.out.println(status3);
         
-        Invoice invoice2 = new Invoice(job1.getId(), 300, "19 januari 2021", job1.getFee(), jobseeker2, type2, status2);
+        Invoice invoice2 = new Invoice(job1.getId(), 300, "1 April 2021", job1.getFee(), jobseeker2, type1, status2);
         
         System.out.println("\n");
         job1.printData();
@@ -62,7 +62,6 @@ public class JWork
         System.out.println("\n");
         invoice2.printData();
     
-        
     }
 
 }

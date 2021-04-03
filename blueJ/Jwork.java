@@ -49,6 +49,9 @@ public class JWork
         EwalletPayment payment2 = new EwalletPayment(10, job1, "3 December 2021", jobseeker2, InvoiceStatus.OnGoing, bonus1);
         EwalletPayment payment3 = new EwalletPayment(10, job1, "3 December 2021", jobseeker2, InvoiceStatus.OnGoing, bonus2);
         
+        BankPayment bank1 = new BankPayment(20, job2, "4 Januari 2021", jobseeker1, InvoiceStatus.Finished);
+        BankPayment bank2 = new BankPayment(20, job2, "4 Januari 2021", jobseeker1, InvoiceStatus.Finished, 500);
+        
         PaymentType type1 = PaymentType.BankPayment;
         PaymentType type2 = PaymentType.EwalletPayment;
         System.out.println(type1);
@@ -76,6 +79,12 @@ public class JWork
         payment2.printData();
         System.out.println("\n");
         payment3.printData();
+        
+        System.out.println("\n");
+        bank1.printData();
+        System.out.println("\n");
+        bank2.printData();
+        
     }
 
 }

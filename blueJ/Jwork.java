@@ -50,7 +50,7 @@ public class JWork
         EwalletPayment payment3 = new EwalletPayment(10, job1, "3 December 2021", jobseeker2, InvoiceStatus.OnGoing, bonus2);
         
         BankPayment bank1 = new BankPayment(20, job2, "4 Januari 2021", jobseeker1, InvoiceStatus.Finished);
-        BankPayment bank2 = new BankPayment(20, job2, "4 Januari 2021", jobseeker1, InvoiceStatus.Finished, 500);
+        BankPayment bank2 = new BankPayment(20, job2, "4 Januari 2021", jobseeker1, InvoiceStatus.Finished, 400);
         
         PaymentType type1 = PaymentType.BankPayment;
         PaymentType type2 = PaymentType.EwalletPayment;

@@ -136,14 +136,7 @@ public class Job
      * Selanjutnya terdapat method bernama printData yang berfungsi untuk mencetak isi data 
      * Mempunyai return type void
      */
-    public void printData()
-    { 
-        System.out.println("==============JOB==============");
-        System.out.println("ID: \n"+ getId());
-        System.out.println("Name: \n" + getName());
-        System.out.println("Fee: \n" + getFee());
-        System.out.println("Category: \n" + getCategory());
-        System.out.println("Recruiter : \n" + getRecruiter().getName());    
-    
+  public String toString(){
+              return "ID= "+id+"\nNama= "+name+"\nRecruiter= "+recruiter+"\nCity="+recruiter.getLocation().getCity()+"\nFee= "+fee+"\nJob Category= "+category+"\n";
     }
 }

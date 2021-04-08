@@ -139,14 +139,8 @@ public class Recruiter
      * Selanjutnya terdapat method bernama printData yang berfungsi untuk mencetak isi data dalam method getName
      * Mempunyai return type void
      */
-    public void printData()
-    {
-        System.out.println("Name: \n" + getName());
-        System.out.println("ID: \n" + getId());
-        System.out.println("Email: \n" + getEmail());
-        System.out.println("Phone Number: \n" + getPhoneNumber());
-        System.out.println("Location: \n" + getLocation());
-    }
-    
+  public String toString(){
+              return "ID= "+id+"\nNama= "+name+"\nPhone Number= "+phoneNumber+"\nLocation= "+location+"\n";
+        }
 }
 

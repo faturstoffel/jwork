@@ -94,10 +94,7 @@ public class Location
      * Selanjutnya terdapat method bernama printData yang berfungsi untuk mencetak isi data dalam method getProvince
      * Mempunyai return type void
      */
-    public void printData()
-    {
-        System.out.println("Province: \n" + getProvince()); //untuk print data
-        System.out.println("City: \n" + getCity());
-        System.out.println("Description: \n" + getDescription());
-    }
+   public String toString(){
+              return "Province= "+province+"\nCity= "+city+"\nDescription= "+description+"\n";
+        }
 }

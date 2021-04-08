@@ -23,6 +23,6 @@ comment7.params=description
 comment7.target=void\ setDescription(java.lang.String)
 comment7.text=\r\n\ Selanjutnya\ terdapat\ method\ setter\ bernama\ setDescription\ untuk\ mengisi\ nilai\ variabel\ description\r\n\ dengan\ return\ type\ void\ dan\ parameter\ bernama\ description\r\n
 comment8.params=
-comment8.target=void\ printData()
+comment8.target=java.lang.String\ toString()
 comment8.text=\r\n\ Selanjutnya\ terdapat\ method\ bernama\ printData\ yang\ berfungsi\ untuk\ mencetak\ isi\ data\ dalam\ method\ getProvince\r\n\ Mempunyai\ return\ type\ void\r\n
 numComments=9

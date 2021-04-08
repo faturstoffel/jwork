@@ -1,3 +1,4 @@
+import java.util.GregorianCalendar;
 
 /**
  * Pada class JWork ini bisa digunakan untuk memasukkan input ke object melalui beberapa baris code
@@ -14,8 +15,17 @@ public class JWork
         Location location2 = new Location ("DKI Jakarta", "Jakarta", "Rumah");
         Recruiter recruiter1 = new Recruiter(1, "fatur", "fatur@gmail.com", "7282", location1);
         Recruiter recruiter2 = new Recruiter(123, "bagus", "bagus@gmail.com", "0812345678", location2);
-        Jobseeker jobseeker1 = new Jobseeker(1, "Rahman", "rahman@gmail.com", "3456", "April 2021");
-        Jobseeker jobseeker2 = new Jobseeker(567, "agus", "agus@gmail.com", "ei900", "13 maret 2021");
+        Jobseeker myjobseeker1 = new Jobseeker(1, "Fatur", "..fatur.stoffel@ui.ac.id", "fatur", new GregorianCalendar(2002, 10, 16));
+        Jobseeker myjobseeker2 = new Jobseeker(2, "Fatur", "fatur.stoffel@ui.ac.id", "FaturStoffel", 2021, 05, 8);
+        Jobseeker myjobseeker3 = new Jobseeker(3, "Fatur", "fatur.stoffel@ui.ac.id", "FaturStoffel");
+        System.out.println(myjobseeker1);
+        System.out.println(myjobseeker2);
+        System.out.println(myjobseeker3);
+         myjobseeker1.setEmail("fatur.coba@ui.ac.id");
+        myjobseeker1.setPassword("rahman2"); 
+        System.out.println("\n");
+        System.out.println(myjobseeker1);
+       
        
     
         
@@ -45,12 +55,7 @@ public class JWork
         
         
         
-        EwalletPayment payment1 = new EwalletPayment(10, job1, "3 December 2021", jobseeker2, InvoiceStatus.OnGoing);
-        EwalletPayment payment2 = new EwalletPayment(10, job1, "3 December 2021", jobseeker2, InvoiceStatus.OnGoing, bonus1);
-        EwalletPayment payment3 = new EwalletPayment(10, job1, "3 December 2021", jobseeker2, InvoiceStatus.OnGoing, bonus2);
-        
-        BankPayment bank1 = new BankPayment(20, job2, "4 Januari 2021", jobseeker1, InvoiceStatus.Finished);
-        BankPayment bank2 = new BankPayment(20, job2, "4 Januari 2021", jobseeker1, InvoiceStatus.Finished, 400);
+
         
         PaymentType type1 = PaymentType.BankPayment;
         PaymentType type2 = PaymentType.EwalletPayment;
@@ -66,24 +71,7 @@ public class JWork
         
        
         
-        System.out.println("\n");
-        job1.printData();
-        
-        
-        System.out.println("\n");
-        
-                
-        System.out.println("\n");
-        payment1.printData();
-        System.out.println("\n");
-        payment2.printData();
-        System.out.println("\n");
-        payment3.printData();
-        
-        System.out.println("\n");
-        bank1.printData();
-        System.out.println("\n");
-        bank2.printData();
+     
         
     }
 

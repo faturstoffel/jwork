@@ -61,12 +61,8 @@ public class Bonus
     {
         this.active = active;
     }
-    public void printData() {
-        System.out.println("ID: " + getId());
-        System.out.println("Referral Code: " + getReferralCode());
-        System.out.println("Extra Fee: " + getExtraFee());
-        System.out.println("Min Total Fee: " + getMinTotalFee());
-        System.out.println("Active: " + getActive());
-    }
+  public String toString(){
+              return "ID= "+id+"\nReferral Code= "+referralCode+"\nExtra Fee= "+extraFee+"\nMin Total Fee= "+minTotalFee+"\nActivate Status= "+active+"\n";
+        }
 }
 

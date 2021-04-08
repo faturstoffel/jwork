@@ -1,4 +1,6 @@
-
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.regex.*;
 /**
  *  Class Jobseeker ini bertujuan untuk mengambil informasi dari pencari kerja
  *  Mulai dari nama, email, password, dan juga tanggal melamar
@@ -15,7 +17,8 @@ public class Jobseeker
     private String name;
     private String email;
     private String password;
-    private String joinDate;
+    private Calendar joinDate;
+   
 
 
     /** 
@@ -27,7 +30,7 @@ public class Jobseeker
      * @param password untuk input variabel password
      * @param joinDate untuk input variabel joinDate
      */
-    public Jobseeker(int id, String name, String email, String password, String joinDate)
+    public Jobseeker(int id, String name, String email, String password, Calendar joinDate)
     {
         /**
          * untuk keyword "this", digunakan untuk mereferensikan variabel yang ada dalam class
@@ -35,10 +38,29 @@ public class Jobseeker
          */
         this.id = id;
         this.name = name;
-        this.email = email;
+        setEmail(email);
+        setPassword(password);
         this.password = password;
         this.joinDate = joinDate;
     }
+    
+    public Jobseeker(int id, String name, String email, String password, int year, int month, int dayOfMonth){
+     
+        this.id = id;
+        this.name = name;
+        setEmail(email);
+        setPassword(password);
+        this.joinDate = new GregorianCalendar(year, month, dayOfMonth);
+    
+    }
+    
+    public Jobseeker(int id, String name, String email, String password){
+      this.id = id;
+      this.name = name;
+       setEmail(email);
+        setPassword(password);
+    }
+
         
          /**
          * Berikutnya terdapat method getter bernama getId untuk mengembalikkan atau mendapatkan data id
@@ -81,7 +103,7 @@ public class Jobseeker
          * dengan return type string
          * @return joinDate mengembalikkan nilai didalam variabel joinDate
          */
-        public String getJoinDate(){
+        public Calendar getJoinDate(){
             return joinDate;
         }
         
@@ -106,7 +128,14 @@ public class Jobseeker
          * dengan return type void dan parameter bernama email
          */
         public void setEmail(String email){
-            this.email = email; //this digunakan karena nama parameter method sama dengan nama instance variabel class
+        String regex = "^[a-zA-Z0-9_!#$%&'*+/=?{|}~^-]+(?:\\.[a-zA-Z0-9_!#$%&'*+/=?{|}~^-]+)*@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(email);
+        matcher.matches();
+        if (matcher.matches() == false)
+            email = null;
+        else
+            this.email = email;
         }
         
         /**
@@ -114,29 +143,39 @@ public class Jobseeker
          * dengan return type void dan parameter bernama password
          */
         public void setPassword(String password){
-            this.password = password; //this digunakan karena nama parameter method sama dengan nama instance variabel class
+        String regexP = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(.{6}$";
+        Pattern pattern = Pattern.compile(regexP);
+        Matcher matcher = pattern.matcher(password);
+        if (matcher.matches() == false)
+            email = null;
+        else
+            this.password = password;
         }
         
         /**
          * Selanjutnya terdapat method setter bernama setJoinDate untuk mengisi nilai variabel joinDate
          * dengan return type void dan parameter bernama joinDate
          */
-        public void setJoinDate(String JoinDate){
+        public void setJoinDate(Calendar JoinDate){
             this.joinDate = joinDate; //this digunakan karena nama parameter method sama dengan nama instance variabel class
         }
         
+        public void setJoinDate(int year, int month, int dayOfMonth){
+           this.joinDate.add(Calendar.MONTH,month);
+           this.joinDate.add(Calendar.YEAR,year);
+           this.joinDate.add(Calendar.DAY_OF_MONTH,dayOfMonth);
+        }
+        
+        public String toString(){
+              return "ID= "+id+"\nNama= "+name+"\nEmail= "+email+"\nPassword= "+password+"\nJoin Date= "+joinDate+"\n";
+        }
+
+      
         /**
          * Selanjutnya terdapat method bernama printData yang berfungsi untuk mencetak isi data dalam method getName
          * Mempunyai return type void
          */
-         public void printData()
-         {
-             System.out.println("Name: \n" + getName());
-             System.out.println("ID: \n" + getId());
-             System.out.println("Email: \n" + getEmail());
-             System.out.println("Password: \n" + getPassword());
-             System.out.println("Join Date: \n" + getJoinDate());
-        }
+        
     }
 
    

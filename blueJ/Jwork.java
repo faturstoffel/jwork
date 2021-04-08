@@ -15,17 +15,19 @@ public class JWork
         Location location2 = new Location ("DKI Jakarta", "Jakarta", "Rumah");
         Recruiter recruiter1 = new Recruiter(1, "fatur", "fatur@gmail.com", "7282", location1);
         Recruiter recruiter2 = new Recruiter(123, "bagus", "bagus@gmail.com", "0812345678", location2);
-        Jobseeker myjobseeker1 = new Jobseeker(1, "Fatur", "..fatur.stoffel@ui.ac.id", "fatur", new GregorianCalendar(2002, 10, 16));
-        Jobseeker myjobseeker2 = new Jobseeker(2, "Fatur", "fatur.stoffel@ui.ac.id", "FaturStoffel", 2021, 05, 8);
-        Jobseeker myjobseeker3 = new Jobseeker(3, "Fatur", "fatur.stoffel@ui.ac.id", "FaturStoffel");
-        System.out.println(myjobseeker1);
-        System.out.println(myjobseeker2);
-        System.out.println(myjobseeker3);
-         myjobseeker1.setEmail("fatur.coba@ui.ac.id");
-        myjobseeker1.setPassword("rahman2"); 
+        Jobseeker jobseeker1 = new Jobseeker(1, "Fatur", "..fatur.stoffel@ui.ac.id", "helmi", new GregorianCalendar(2002, 9, 20));
+        Jobseeker jobseeker2 = new Jobseeker(2, "Fatur", "fatur.stoffel@ui.ac.id", "Stoffelfatur1", 2022, 05, 9);
+        Jobseeker jobseeker3 = new Jobseeker(3, "Fatur", "fatur.stoffel@ui.ac.id", "Stoffelfatur1");
         System.out.println("\n");
-        System.out.println(myjobseeker1);
-       
+        System.out.println(jobseeker1);
+        System.out.println("\n");
+        System.out.println(jobseeker2);
+        System.out.println("\n");
+        System.out.println(jobseeker3);
+        jobseeker1.setEmail("manusia@ui.ac.id");
+        jobseeker1.setPassword("Hooman1"); 
+        System.out.println("\n");
+        System.out.println(jobseeker1);       
        
     
         

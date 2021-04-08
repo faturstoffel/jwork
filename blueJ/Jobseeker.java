@@ -1,6 +1,9 @@
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.regex.*;
+import java.text.SimpleDateFormat;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 /**
  *  Class Jobseeker ini bertujuan untuk mengambil informasi dari pencari kerja
  *  Mulai dari nama, email, password, dan juga tanggal melamar
@@ -40,7 +43,6 @@ public class Jobseeker
         this.name = name;
         setEmail(email);
         setPassword(password);
-        this.password = password;
         this.joinDate = joinDate;
     }
     
@@ -128,14 +130,17 @@ public class Jobseeker
          * dengan return type void dan parameter bernama email
          */
         public void setEmail(String email){
-        String regex = "^[a-zA-Z0-9_!#$%&'*+/=?{|}~^-]+(?:\\.[a-zA-Z0-9_!#$%&'*+/=?{|}~^-]+)*@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
+        String regex = "^[a-zA-Z0-9&*_~]+([\\.{1}]?[a-z]+)+@[a-z0-9]+([\\.]{1}[a-z]+)\\S+(?!.*?\\.\\.)";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(email);
-        matcher.matches();
-        if (matcher.matches() == false)
-            email = null;
-        else
+        if(matcher.matches())
+        {
             this.email = email;
+        }
+        else
+        {
+                this.email = "";
+        }
         }
         
         /**
@@ -143,13 +148,13 @@ public class Jobseeker
          * dengan return type void dan parameter bernama password
          */
         public void setPassword(String password){
-        String regexP = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(.{6}$";
+         String regexP = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{6,}$";
         Pattern pattern = Pattern.compile(regexP);
         Matcher matcher = pattern.matcher(password);
-        if (matcher.matches() == false)
-            email = null;
-        else
+        if (matcher.matches())
             this.password = password;
+        else
+            this.password = "";
         }
         
         /**
@@ -161,21 +166,21 @@ public class Jobseeker
         }
         
         public void setJoinDate(int year, int month, int dayOfMonth){
-           this.joinDate.add(Calendar.MONTH,month);
-           this.joinDate.add(Calendar.YEAR,year);
-           this.joinDate.add(Calendar.DAY_OF_MONTH,dayOfMonth);
+          this.joinDate = new GregorianCalendar(year, month, dayOfMonth);
         }
         
-        public String toString(){
-              return "ID= "+id+"\nNama= "+name+"\nEmail= "+email+"\nPassword= "+password+"\nJoin Date= "+joinDate+"\n";
+        @Override
+        public String toString() {
+        if (this.joinDate == null) {
+            return "Id = " + getId() + "\nNama = " + getName() + "\nEmail = " + getEmail() + "\nPassword = " + getPassword();
+        } 
+        else {
+            SimpleDateFormat formattedDate = new SimpleDateFormat("dd-MMMM-yyyy");
+            String date = formattedDate.format(getJoinDate().getTime());
+            return "Id = " + getId() + "\nNama = " + getName() + "\nEmail = " + getEmail() + "\nPassword = " + getPassword() + "\nJoin Date = " + date;
         }
 
-      
-        /**
-         * Selanjutnya terdapat method bernama printData yang berfungsi untuk mencetak isi data dalam method getName
-         * Mempunyai return type void
-         */
-        
     }
+}
 
    

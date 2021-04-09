@@ -7,7 +7,7 @@
  */
 public class BankPayment extends Invoice
 {
-    
+ // instance variables
     private static final PaymentType PAYMENT_TYPE = PaymentType.BankPayment;
     private int adminFee;
 
@@ -15,7 +15,7 @@ public class BankPayment extends Invoice
      * Constructor for objects of class BankPayment
      */
     public BankPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus){
-       
+        //Keyword Super dibawah digunakan untuk memanggil variable yang ada pada Superclassnya.
         super(id, job, date, jobseeker, invoiceStatus);
     }
 
@@ -28,7 +28,7 @@ public class BankPayment extends Invoice
     public BankPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus, int adminFee){
        
         super(id, job, date, jobseeker, invoiceStatus);
-        this.setAdminFee(adminFee);
+        this.adminFee = adminFee;
     }
     
     @Override
@@ -68,7 +68,6 @@ public class BankPayment extends Invoice
         System.out.println("Status: " + getInvoiceStatus());
         System.out.println("Payment Type: " + getPaymentType());
         
-    }
-}
+    }}
     
 

@@ -1,6 +1,8 @@
 #BlueJ class context
 comment0.target=JWork
 comment0.text=\r\n\ Pada\ class\ JWork\ ini\ bisa\ digunakan\ untuk\ memasukkan\ input\ ke\ object\ melalui\ beberapa\ baris\ code\r\n\ dengan\ access\ modifier\ public\r\n\ @author\ Fatur\ Rahman\ Stoffel\r\n\ @version\ 18/03/21\r\n
-comment1.params=args
-comment1.target=void\ main(java.lang.String[])
-numComments=2
+comment1.params=
+comment1.target=JWork()
+comment2.params=args
+comment2.target=void\ main(java.lang.String[])
+numComments=3

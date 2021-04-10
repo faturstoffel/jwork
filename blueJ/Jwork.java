@@ -8,72 +8,38 @@ import java.util.GregorianCalendar;
  */
 public class JWork
 {
-   
-      public static void main (String [] args) 
-    {
-        Location location1 = new Location("Jakarta", "Jakarta", "kota");
-        Location location2 = new Location ("DKI Jakarta", "Jakarta", "Rumah");
-        Recruiter recruiter1 = new Recruiter(1, "fatur", "fatur@gmail.com", "7282", location1);
-        Recruiter recruiter2 = new Recruiter(123, "bagus", "bagus@gmail.com", "0812345678", location2);
-        Jobseeker jobseeker1 = new Jobseeker(1, "Fatur", "..fatur.stoffel@ui.ac.id", "helmi", new GregorianCalendar(2002, 9, 20));
-        Jobseeker jobseeker2 = new Jobseeker(2, "Fatur", "fatur.stoffel@ui.ac.id", "Stoffelfatur1", 2022, 05, 9);
-        Jobseeker jobseeker3 = new Jobseeker(3, "Fatur", "fatur.stoffel@ui.ac.id", "Stoffelfatur1");
-        System.out.println("\n");
-        System.out.println(jobseeker1);
-        System.out.println("\n");
-        System.out.println(jobseeker2);
-        System.out.println("\n");
-        System.out.println(jobseeker3);
-        jobseeker1.setEmail("manusia@ui.ac.id");
-        jobseeker1.setPassword("Hooman1"); 
-        System.out.println("\n");
-        System.out.println(jobseeker1);       
-       
+   public JWork(){
+    }
     
+      public static void main (String [] args) 
+    {Location location1 = new Location("Jawa Barat", "Jakarta", "Rumah");
+        Recruiter recruiter1 = new Recruiter(1, "FaturStoffel", "fatur@gmail.com", "50000", location1);
         
+        Jobseeker jobseeker1 = new Jobseeker(1, "Anton", ".anton@ui.ac.id", "Hey123", new GregorianCalendar(2021, 4, 7));
+        Jobseeker jobseeker2 = new Jobseeker(2, "Andi", "andi@ui.ac.id", "BGSf76", 2021, 1, 3);
+        Jobseeker jobseeker3 = new Jobseeker(3, "Dana", "dana@ui.ac.id", "danagaming678");
+        Job job1 = new Job(1, "IT", recruiter1, 10000, JobCategory.BackEnd);
+        Bonus bonus1 = new Bonus(1, "pesangon", 1000000, 1, true);
+        Bonus bonus2 = new Bonus(2, "uangsuap", 10000000, 2, true);
         
+        EwalletPayment invoice1 = new EwalletPayment(1, job1, jobseeker1, InvoiceStatus.Finished);
+        EwalletPayment invoice2 = new EwalletPayment(2, job1, jobseeker2, InvoiceStatus.Finished, bonus1);
+        EwalletPayment invoice3 = new EwalletPayment(3, job1,  jobseeker3, InvoiceStatus.Finished, bonus2);
         
-        JobCategory category1 = JobCategory.WebDeveloper;
-        JobCategory category2 = JobCategory.FrontEnd;
-        JobCategory category3 = JobCategory.BackEnd;
-        JobCategory category4 = JobCategory.UI;
-        JobCategory category5 = JobCategory.UX;
-        JobCategory category6 = JobCategory.Devops;
-        JobCategory category7 = JobCategory.DataScientist;
-        JobCategory category8 = JobCategory.DataAnalyst;
-        System.out.println(category1);
-        System.out.println(category2);
-        System.out.println(category3);
-        System.out.println(category4);
-        System.out.println(category5);
-        System.out.println(category6);
-        System.out.println(category7);
-        System.out.println(category8);
+        BankPayment invoice4 = new BankPayment(4, job1, jobseeker1, InvoiceStatus.Finished);
+        BankPayment invoice5 = new BankPayment(5, job1, jobseeker2, InvoiceStatus.Finished, 5000);
+        invoice1.setTotalFee();
+        invoice2.setTotalFee();
+        invoice3.setTotalFee();
+        invoice4.setTotalFee();
+        invoice5.setTotalFee();
         
-        Job job1 = new Job (1, "junior", recruiter2, 10000, category7);
-        Job job2 = new Job (2, "senior", recruiter2, 1000, category6);
-        Bonus bonus1 = new Bonus (1, "ABCD", 10000, 1, true);
-        Bonus bonus2 = new Bonus (1, "DEFG", 10000, 10000000, true);
-        
-        
-        
-
-        
-        PaymentType type1 = PaymentType.BankPayment;
-        PaymentType type2 = PaymentType.EwalletPayment;
-        System.out.println(type1);
-        System.out.println(type2);
-        
-        InvoiceStatus status1 = InvoiceStatus.OnGoing;
-        InvoiceStatus status2 = InvoiceStatus.Finished;
-        InvoiceStatus status3 = InvoiceStatus.Cancelled;
-        System.out.println(status1);
-        System.out.println(status2);
-        System.out.println(status3);
-        
+        System.out.println(invoice1.toString());
+        System.out.println(invoice2.toString());
+        System.out.println(invoice3.toString());
+        System.out.println(invoice4.toString());
+        System.out.println(invoice5.toString());
        
-        
-     
         
     }
 

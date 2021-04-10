@@ -14,9 +14,9 @@ public class BankPayment extends Invoice
     /**
      * Constructor for objects of class BankPayment
      */
-    public BankPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus){
+    public BankPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus){
         //Keyword Super dibawah digunakan untuk memanggil variable yang ada pada Superclassnya.
-        super(id, job, date, jobseeker, invoiceStatus);
+        super(id, job, jobseeker, invoiceStatus);
     }
 
     /**
@@ -27,7 +27,7 @@ public class BankPayment extends Invoice
      */
     public BankPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus, int adminFee){
        
-        super(id, job, date, jobseeker, invoiceStatus);
+        super(id, job, jobseeker, invoiceStatus);
         this.adminFee = adminFee;
     }
     
@@ -56,18 +56,11 @@ public class BankPayment extends Invoice
     }
     
     @Override
-    public void printData(){
-        System.out.println("===================== INVOICE =====================");
-        System.out.println("ID: " + getId());
-        System.out.println("Job: " + getJob().getName());
-        System.out.println("Date: " + getDate());
-        System.out.println("Job Seeker: " + getJobseeker().getName());
-        System.out.println("Admin Fee: " + getAdminFee());
-        setTotalFee();
-        System.out.println("Total Fee: " + getTotalFee());
-        System.out.println("Status: " + getInvoiceStatus());
-        System.out.println("Payment Type: " + getPaymentType());
-        
-    }}
+    public String toString(){
+      return "ID= "+Invoice.getInvoice().getId()+"\nJob= "+job+"\nJobseeker= "+jobseeker+"\nAdmin Fee="+AdminFee+"\nTotal Fee="+TotalFee+"\nStatus="+Status;   
+    }
+ 
+}
+    
     
 

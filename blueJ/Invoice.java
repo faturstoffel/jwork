@@ -1,3 +1,5 @@
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 /**
  * Class ini bertujuan untuk memberikan invoice total gaji dari pekerja
@@ -13,19 +15,18 @@ public abstract class Invoice
     // Access Modifier variable di set private.
     private int id;
     private Job job;
-    private String date;
+    private Calendar date;
     protected int totalFee;
     private Jobseeker jobseeker;
     private InvoiceStatus invoiceStatus;
     private PaymentType paymentType;
 
 
-    public Invoice(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
+    public Invoice(int id, Job job,Jobseeker jobseeker, InvoiceStatus invoiceStatus)
     {
       
         this.id = id;
         this.job = job;
-        this.date = date;
         this.totalFee = totalFee;
         this.jobseeker = jobseeker;
         this.invoiceStatus = invoiceStatus;
@@ -42,7 +43,7 @@ public abstract class Invoice
     }
     
  
-    public String getDate(){
+    public Calendar getDate(){
         return date;
     }
     
@@ -77,9 +78,14 @@ public abstract class Invoice
         this.job = job; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
  
-    public void setDate(String date){
+    public void setDate(Calendar date){
         this.date = date; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
+    
+    public void setDate(int year, int month, int dayOfMonth){
+         this.date = new GregorianCalendar(year, month, dayOfMonth);   
+    }
+    
     
     
 
@@ -105,7 +111,11 @@ public abstract class Invoice
     }
     
    
-  public abstract void printData(); 
+     @Override
+     public String toString(){
+          return "ID= "+id+"\nJob= "+job+"\nJobseeker= "+jobseeker+"\nInvoice Status="+invoiceStatus+"\n";
+
+        }
        
 }
 

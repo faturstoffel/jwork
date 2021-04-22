@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 /**
  * Class DatabaseJobSeeker ini akan menjadi database untuk penyimpanan informasi dari jobseeker yang ada 
@@ -8,48 +9,52 @@
  */
 public class DatabaseJobseeker
 {
-    // Deklarasi dari variabel yang digunakan
-    // dimana bersifat private, sehingga hanya bisa diakses oleh class sendiri
-    private static String[] listJobseeker;
-    
-     /**
-     * Method addJobseeker ini mempunyai tipe boolean
-     * parameter yang digunakan adalah jobseeker
-     * Betujuan untuk menambahkan data jobseeker baru pada database
-     * @return false jika bertipe data boolean
-     * @param jobseeker sebagai input
-     */
-    public static boolean addJobseeker(Jobseeker jobseeker){
-      return false;   
-    }
-    
-    /**
-     * Method removeJobseeker ini mempunyai tipe boolean
-     * parameter yang digunakan adalah jobseeker
-     * Betujuan untuk menghapus data jobseeker pada database
-     * @return false jika bertipe data boolean
-     * @param jobseeker sebagai input
-     */
-    public static boolean removeJobseeker(Jobseeker jobseeker){
-     return false;   
-    }
-    
-     /**
-    * Berikutnya terdapat method getter bernama getJobseeker
-    * @return null mengembalikkan nilai null 
-    */
-    public static Job getJobseeker(){
-     return null;   
+    private static ArrayList<Jobseeker> JOBSEEKER_DATABASE = new ArrayList<Jobseeker>();
+    private static int lastId = 0;
+
+    public static ArrayList<Jobseeker> getDatabaseJobseeker()
+    {
+        return JOBSEEKER_DATABASE;
     }
 
-    /**
-    * Berikutnya terdapat method getter bernama getListJobseeker
-    * @return null mengembalikkan nilai null 
-    * Betipe string array
-    * tidak ada parameter yang digunakan pada method getListJobseeker ini
-    */
-    public static String[] getListJobseeker(){
-     return listJobseeker;   
+    public static int getLastId()
+    {
+        return lastId;
+    }
+
+    public static Jobseeker getJobseekerById(int id){
+        Jobseeker tempVar = null;
+        for (Jobseeker jobseeker: JOBSEEKER_DATABASE) {
+            if (id == jobseeker.getId()){
+                tempVar = jobseeker;
+            }
+            else{
+                tempVar =  null;
+            }
+        }
+        return tempVar;
+    }
+
+    public static boolean addJobseeker(Jobseeker jobseeker)
+    {
+        JOBSEEKER_DATABASE.add(jobseeker);
+        lastId = jobseeker.getId();
+        return true;
+    }
+
+    public static boolean removeJobseeker(int id)
+    {
+        boolean tempBool = true;
+        for (Jobseeker jobseeker: JOBSEEKER_DATABASE) {
+            if (id == jobseeker.getId()){
+                JOBSEEKER_DATABASE.remove(id);
+                tempBool = true;
+            }
+            else{
+                tempBool = false;
+            }
+        }
+        return tempBool;
     }
     
    

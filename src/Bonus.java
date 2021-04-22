@@ -2,7 +2,7 @@
 /**
  * Write a description of class Bonus here.
  *
- * @author (your name)
+ * @author Fatur Rahman Stoffel
  * @version (a version number or a date)
  */
 public class Bonus

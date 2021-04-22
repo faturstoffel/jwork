@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 /**
  * Write a description of class DatabaseBonus here.
  *
@@ -7,24 +7,52 @@
  */
 public class DatabaseBonus
 {
-   private static String[] listBonus;
-   
-   public static boolean addBonus(Bonus bonus){
-     return false;  
-    }
-    
-    public static boolean removeBonus(Bonus bonus){
-      return false;   
-    }
-    
-    public static Bonus getBonus()
+    private static ArrayList<Bonus> BONUS_DATABASE = new ArrayList<Bonus>();
+    private static int lastId = 0;
+
+    public static ArrayList<Bonus> getBonusDatabase()
     {
-      return null;   
+        return BONUS_DATABASE;
     }
-    
-    public static String[] getListBonus()
+
+    public static int getLastId()
     {
-        return listBonus;
+        return lastId;
+    }
+
+    public static Bonus getBonusById(int id){
+        Bonus tempVar = null;
+        for (Bonus bonus: BONUS_DATABASE) {
+            if (id == bonus.getId()){
+                tempVar = bonus;
+            }
+            else{
+                tempVar =  null;
+            }
+        }
+        return tempVar;
+    }
+
+    public static boolean addBonus(Bonus bonus)
+    {
+        BONUS_DATABASE.add(bonus);
+        lastId = bonus.getId();
+        return true;
+    }
+
+    public static boolean removeBonus(int id)
+    {
+        boolean tempBool = true;
+        for (Bonus bonus: BONUS_DATABASE) {
+            if (id == bonus.getId()){
+                BONUS_DATABASE.remove(id);
+                tempBool = true;
+            }
+            else{
+                tempBool = false;
+            }
+        }
+        return tempBool;
     }
     
 }

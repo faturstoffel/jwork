@@ -56,9 +56,6 @@ public class DatabaseJobseeker
         }
         return tempBool;
     }
-    
-   
-    
 
-   
+
 }

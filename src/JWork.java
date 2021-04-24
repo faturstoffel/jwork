@@ -17,7 +17,8 @@ public class JWork
         DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "jaka", "jaka@ui.ac.id", "jakajaka34", 2020, 05, 21));
         DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "bagus", "bagus@ui.ac.id", "bagausbagas33", 2020, 05, 21));
         DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "agus", "agusui.ac.id", "agusnaru36", 2021, 03, 12));
-
+        Bonus bonus1 = new Bonus(1, "BONUS69420", 15000, 1, true);
+        Bonus bonus2 = new Bonus(2, "myBonus2", 100000, 10000111, true);
         System.out.println("\n=====================Jobseeker Database====================\n");
         System.out.println(DatabaseJobseeker.getDatabaseJobseeker());
         DatabaseJob.addJob(new Job(1, "Backend Engineer Lazada", DatabaseRecruiter.getRecruiterById(1), 10500, JobCategory.BackEnd));

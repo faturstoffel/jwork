@@ -22,39 +22,45 @@ public class DatabaseJobseeker
         return lastId;
     }
 
-    public static Jobseeker getJobseekerById(int id){
-        Jobseeker tempVar = null;
-        for (Jobseeker jobseeker: JOBSEEKER_DATABASE) {
-            if (id == jobseeker.getId()){
-                tempVar = jobseeker;
+    public static Jobseeker getJobseekerById(int id) throws JobSeekerNotFoundException {
+        Jobseeker a = null;
+        try{for (Jobseeker jobseeker : JOBSEEKER_DATABASE) {
+            if (id == jobseeker.getId()) {
+                a = jobseeker;
             }
-            else{
-                tempVar =  null;
-            }
-        }
-        return tempVar;
+        }}
+        catch (Exception b){
+            throw new JobSeekerNotFoundException(id);}
+        return a;
     }
 
-    public static boolean addJobseeker(Jobseeker jobseeker)
-    {
+    public static boolean addJobseeker(Jobseeker jobseeker) throws EmailAlreadyExistsException {
+        for (Jobseeker js : JOBSEEKER_DATABASE) {
+            if (jobseeker.getEmail() == js.getEmail()) {
+                throw new EmailAlreadyExistsException(jobseeker);
+            }
+        }
         JOBSEEKER_DATABASE.add(jobseeker);
         lastId = jobseeker.getId();
         return true;
+
     }
 
-    public static boolean removeJobseeker(int id)
+    public static boolean removeJobseeker(int id) throws JobSeekerNotFoundException
     {
-        boolean tempBool = true;
-        for (Jobseeker jobseeker: JOBSEEKER_DATABASE) {
-            if (id == jobseeker.getId()){
-                JOBSEEKER_DATABASE.remove(id);
-                tempBool = true;
-            }
-            else{
-                tempBool = false;
+        boolean status = false;
+        for (Jobseeker element: JOBSEEKER_DATABASE) {
+            if (element.getId() == id){
+                JOBSEEKER_DATABASE.remove(element);
+                status = true;
+                break;
             }
         }
-        return tempBool;
+        if(!status){
+            throw new JobSeekerNotFoundException(id);
+        }
+        return status;
+
     }
 
 

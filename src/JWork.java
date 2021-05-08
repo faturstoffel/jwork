@@ -11,7 +11,7 @@ public class JWork
    public JWork(){
     }
 
-    public static void main(String[] args) //menggunakan define object dari location,recruiter,jon,jobseeker,dan invoice agar bisa berjalan
+    public static void main(String[] args)
     {
         try {
             DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Fatur Stoffel",

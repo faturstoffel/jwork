@@ -31,13 +31,13 @@ public class JWork
         }
         try {
             DatabaseInvoice.addInvoice(new EwalletPayment(1, jobs, DatabaseJobseeker.getJobseekerById(1)));
-        } catch (JobseekerNotFoundException | OngoingInvoiceAlreadyExistsException e) {
+        } catch (JobSeekerNotFoundException | OngoingInvoiceAlreadyExistsException e) {
             System.out.println(e.getMessage());
         }
 
         try {
             DatabaseInvoice.addInvoice(new EwalletPayment(2, jobs1, DatabaseJobseeker.getJobseekerById(2)));
-        } catch (JobseekerNotFoundException | OngoingInvoiceAlreadyExistsException e) {
+        } catch (JobSeekerNotFoundException | OngoingInvoiceAlreadyExistsException e) {
             System.out.println(e.getMessage());
         }
 
@@ -53,6 +53,6 @@ public class JWork
 
        
         
-    }
+
 
 

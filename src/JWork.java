@@ -16,10 +16,10 @@ public class JWork
 
     public static void main(String[] args)
     {
-        // CS modul 7
+
         Location location1 = new Location("Depok", "Jawa Barat", "kutek");
 
-        Recruiter recruiter1 = new Recruiter(1, "fatur", "fatur@gmail.com", "08211226", location1);
+        Recruiter recruiter1 = new Recruiter(1, "fatur", "rahman@gmail.com", "08211226", location1);
 
         try {
             DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "fatur", "not.rahman@.gmail.com", "Hgy56%$#2", new GregorianCalendar(2022, 3, 16)));
@@ -42,7 +42,7 @@ public class JWork
             System.out.println(e.getMessage());
         }
 
-        // add bonus
+
         try {
             DatabaseBonus.addBonus(new Bonus(DatabaseBonus.getLastId() + 1, "pesangon", 100, 5000, false));
         } catch (ReferralCodeAlreadyExistsException e) {
@@ -65,7 +65,7 @@ public class JWork
         }
 
 
-        // add invoice
+
         try {
             DatabaseInvoice.addInvoice(new BankPayment(1, DatabaseJob.getJobDatabase(), DatabaseJobseeker.getJobseekerById(1)));
             DatabaseInvoice.addInvoice(new BankPayment(2, DatabaseJob.getJobDatabase(), DatabaseJobseeker.getJobseekerById(2)));
@@ -76,38 +76,38 @@ public class JWork
             System.out.println(e.getMessage());
         }
 
-        // get recruiter id
+
         try {
             Recruiter r1 = DatabaseRecruiter.getRecruiterById(99);
         } catch(RecruiterNotFoundException e){
             System.out.println(e.getMessage());
         }
-        // get jobseeker
+
         try {
             Jobseeker js1 = DatabaseJobseeker.getJobseekerById(99);
         } catch(JobSeekerNotFoundException e){
             System.out.println(e.getMessage());
         }
-        // get job
+
         try {
             Job j1 = DatabaseJob.getJobById(99);
         } catch(JobNotFoundException e){
             System.out.println(e.getMessage());
         }
-        // get bonus
+
         try {
             Bonus b1 = DatabaseBonus.getBonusById(99);
         } catch(BonusNotFoundException e){
             System.out.println(e.getMessage());
         }
-        // get invoice
+
         try {
             Invoice i1 = DatabaseInvoice.getInvoiceById(99);
         } catch(InvoiceNotFoundException e){
             System.out.println(e.getMessage());
         }
 
-        //delete invoice
+
         try {
             DatabaseInvoice.removeInvoice(99);
         } catch (InvoiceNotFoundException e){
@@ -115,7 +115,7 @@ public class JWork
         }
 
 
-        //print
+
         ArrayList<Jobseeker> jobseeker = DatabaseJobseeker.getDatabaseJobseeker();
         for (Jobseeker js : jobseeker)
             System.out.println(js.toString());
@@ -128,7 +128,7 @@ public class JWork
         for (Invoice i: invoice)
             System.out.println(i.toString());
 
-        // buat threading
+
         System.out.println("=========Multi Threading=========");
         for (Invoice inv : DatabaseInvoice.getInvoiceDatabase()) {
             new Thread(new FeeCalculator(inv)).start();

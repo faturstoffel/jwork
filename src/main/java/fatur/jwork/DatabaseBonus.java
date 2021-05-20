@@ -32,6 +32,41 @@ public class DatabaseBonus
             throw new BonusNotFoundException(id);}
         return x;
     }
+    public static Bonus getBonusByReferralCode(String referralCode){
+        Bonus temp = null;
+        for (Bonus bonus : BONUS_DATABASE) {
+            if (referralCode.equals(bonus.getReferralCode())) {
+                temp = bonus;
+            }
+        }
+        return temp;
+    }
+    public static boolean activeBonus(int id){
+        boolean temp = false;
+        for (Bonus bonus: BONUS_DATABASE) {
+            if (id == bonus.getId()){
+                temp = bonus.getActive();
+                temp = true;
+            }
+            else{
+                temp =  false;
+            }
+        }
+        return temp;
+    }
+    public static boolean deactiveBonus(int id){
+        boolean temp = false;
+        for (Bonus bonus: BONUS_DATABASE) {
+            if (id == bonus.getId()){
+                temp = bonus.getActive();
+                temp = false;
+            }
+            else{
+                temp = false;
+            }
+        }
+        return temp;
+    }
 
     public static boolean addBonus(Bonus bonus) throws ReferralCodeAlreadyExistsException
     {

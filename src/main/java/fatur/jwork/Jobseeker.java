@@ -1,4 +1,5 @@
 package fatur.jwork;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -169,6 +170,8 @@ public class Jobseeker
         public void setJoinDate(int year, int month, int dayOfMonth){
           this.joinDate = new GregorianCalendar(year, month, dayOfMonth);
         }
+
+
         
         @Override
         public String toString() {

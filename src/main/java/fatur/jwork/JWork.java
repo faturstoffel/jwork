@@ -13,31 +13,27 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @version 18/03/21
  */
 @SpringBootApplication
-public class JWork
-{
+public class JWork {
+
     public static void main(String[] args) {
-        Location location1 = new Location("Jawa Barat", "DKI Jakarta", "test1");
-        Location location2 = new Location("Papua", "Jayapura", "test2");
-        Location location3 = new Location("Jawa Barat", "Bandung", "test3");
-
-        Recruiter recruiter1 = new Recruiter(1, "Bagus", "bagus@gmail.com", "086199051",location1);
-        Recruiter recruiter2 = new Recruiter(2, "Henri", "henri@gmail.com", "082626222", location2);
-        Recruiter recruiter3 = new Recruiter(3,"Heru", "heru@gmail.com", "083727262", location3);
-
-        Job job1 = new Job(1, "Mawar", recruiter1, 30000, JobCategory.BackEnd);
-        Job job2 = new Job(2, "Melati", recruiter1, 300300, JobCategory.DataAnalyst);
-        Job job3 = new Job(3, "Dodi", recruiter2, 45000, JobCategory.Devops);
-        Job job4 = new Job(4, "Dudu", recruiter3, 50000, JobCategory.Devops);
-
-
+        Location location1 = new Location("Papua", "Jayapura", "Service Centre");
+        Location location2 = new Location("Jawa Barat", "Jakarta", "Main Office");
+        Location location3 = new Location("NTT", "Kupang", "Main Office");
+        DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId() + 1, "Fatur", "fatur@gmail.com", "0821256522", location1));
+        DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId() + 1, "Stoffel", "stoffel@gmail.com", "0821452626", location2));
+        DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId() + 1, "Dimas", "dimas@gmail.com", "0852415345", location3));
+        try {
+            DatabaseJob.addJob(new Job(1, "Backend Engineer", DatabaseRecruiter.getRecruiterById(1), 5000000, JobCategory.BackEnd));
+            DatabaseJob.addJob(new Job(2, "Backend Engineer", DatabaseRecruiter.getRecruiterById(2), 1000000, JobCategory.FrontEnd));
+            DatabaseJob.addJob(new Job(3, "Frontend Engineer", DatabaseRecruiter.getRecruiterById(3), 8000000, JobCategory.FrontEnd));
+            DatabaseJob.addJob(new Job(4, "UI/UX Engineer", DatabaseRecruiter.getRecruiterById(3), 15000000, JobCategory.UI));
+        }
+        catch(RecruiterNotFoundException e){
+            e.printStackTrace();
+        }
         SpringApplication.run(JWork.class, args);
     }
 
 }
-
-
-       
-        
-
 
 

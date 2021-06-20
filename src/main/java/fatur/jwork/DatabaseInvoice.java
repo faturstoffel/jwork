@@ -1,44 +1,77 @@
 package fatur.jwork;
 import java.util.ArrayList;
 
+/**
+ * Class DatabaseInvoice, sebagai database untuk invoice
+ * @author Fatur Rahman Stoffel
+ * @version 20-06-2021
+ */
+
 public class DatabaseInvoice {
     private static ArrayList<Invoice> INVOICE_DATABASE = new ArrayList<Invoice>();
-    private static int lastId;
+    private static int lastId = 0;
 
+    /**
+     * Get invoice database
+     * @return INVOICE_DATABASE
+     */
     public static ArrayList<Invoice> getInvoiceDatabase(){
         return INVOICE_DATABASE;
     }
 
+    /**
+     * Get last id
+     * @return lastId
+     */
     public static int getLastId(){
         return lastId;
     }
 
+    /**
+     * Untuk mendapatkan invoice dengan menggunakan id
+     * @param id
+     * @return result
+     * @throws InvoiceNotFoundException
+     */
     public static Invoice getInvoiceById(int id) throws InvoiceNotFoundException {
-        Invoice x = null;
-        try{for (Invoice invoice : INVOICE_DATABASE) {
+        Invoice result = null;
+        for (Invoice invoice : INVOICE_DATABASE) {
             if (id == invoice.getId()) {
-                x = invoice;
-            }
-        }}
-        catch (Exception e){
-            throw new InvoiceNotFoundException(id);}
-        return x;
-    }
-
-    public static ArrayList<Invoice> getInvoiceByJobseeker(int jobseekerId){
-        ArrayList<Invoice> temp = new ArrayList<>();
-        for (int i=0; i < INVOICE_DATABASE.size(); i++) {
-            if(INVOICE_DATABASE.get(i).getJobseeker().getId() == jobseekerId){
-                temp.add(INVOICE_DATABASE.get(i));
-                return temp;
+                result = invoice;
+            } else {
+                result = null;
             }
         }
-        return null;
+        if (result == null){
+            throw new InvoiceNotFoundException(id);
+        }
+
+        return result;
     }
 
+    /**
+     * Untuk mendapatkan invoice dengan menggunakan jobseeker
+     * @param jobseekerid
+     * @return temp
+     */
+    public static ArrayList<Invoice> getInvoiceByJobseeker(int jobseekerid){
+        ArrayList<Invoice> temp = new ArrayList<Invoice>();
+        for (int i = 0; i < INVOICE_DATABASE.size(); i++) {
+            if (jobseekerid == INVOICE_DATABASE.get(i).getJobseeker().getId()) {
+                temp.add(INVOICE_DATABASE.get(i));
+            }
+        }
+        return temp;
+    }
+
+    /**
+     * Untuk melakukan add invoice
+     * @param invoice
+     * @throws OngoingInvoiceAlreadyExistsException
+     */
     public static boolean addInvoice(Invoice invoice) throws OngoingInvoiceAlreadyExistsException{
-        for (Invoice invoicee : INVOICE_DATABASE) {
-            if (invoicee.getInvoiceStatus() == InvoiceStatus.OnGoing) {
+        for (Invoice invoices : INVOICE_DATABASE) {
+            if (invoices.getInvoiceStatus() == InvoiceStatus.OnGoing && invoices.getId()==invoice.getId()) {
                 throw new OngoingInvoiceAlreadyExistsException(invoice);
             }
         }
@@ -46,30 +79,45 @@ public class DatabaseInvoice {
         lastId = invoice.getId();
         return true;
     }
-    public static boolean changeInvoiceStatus(int id, InvoiceStatus invoiceStatus){
-        for (int i=0; i < INVOICE_DATABASE.size(); i++) {
-            if(INVOICE_DATABASE.get(i).getId() == id) {
-                INVOICE_DATABASE.get(i).setInvoiceStatus(invoiceStatus);
-                return true;
+
+    /**
+     * Untuk mengubah status dari invoice
+     * @param id
+     * @param invoiceStatus
+     * @return boolean
+     */
+    public static boolean changeInvoiceStatus(int id,InvoiceStatus invoiceStatus){
+        boolean tempBool = true;
+        for (Invoice invoice: INVOICE_DATABASE) {
+            if (id == invoice.getId()){
+                invoice.setInvoiceStatus(InvoiceStatus.OnGoing);
+                tempBool = true;
+            }
+            else{
+                tempBool = false;
             }
         }
-        return false;
+        return tempBool;
     }
 
-    public static boolean removeInvoice(int id) throws InvoiceNotFoundException {
-        boolean status = false;
-        for (Invoice element : INVOICE_DATABASE) {
-            if (element.getId() == id) {
-                INVOICE_DATABASE.remove(element);
-                status = true;
+    /**
+     * Untuk melakukan remove invoice
+     * @param id
+     * @return boolean
+     * @throws InvoiceNotFoundException
+     */
+    public static boolean removeInvoice(int id) throws InvoiceNotFoundException{
+        boolean tempBool = false;
+        for (Invoice invoice: INVOICE_DATABASE) {
+            if (id == invoice.getId()){
+                INVOICE_DATABASE.remove(id);
+                tempBool = true;
                 break;
             }
         }
-        if (!status){
+        if (!tempBool) {
             throw new InvoiceNotFoundException(id);
         }
-
-        return status;
+        return tempBool;
     }
-
 }

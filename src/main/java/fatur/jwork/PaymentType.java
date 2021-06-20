@@ -3,7 +3,7 @@ package fatur.jwork;
  * Enum Payment Type berisi variabel konstant yang didalamnya terdapat Bank Payment dan E-wallet Payment
  * Variabel-variabel ini merupakan final variabel yang tidak bisa untuk diganti 
  * @author Fatur Rahman Stoffel
- * @version 25/02/2021
+ * @version 25-02-2021
  */
 public enum PaymentType {
     BankPayment("Bank Payment"),

@@ -12,7 +12,7 @@ import java.util.regex.Matcher;
  *  Class ini mempunyai method getter dan setter, dimana juga mempunyai method prinData yang mempunyai tipe void
  *  untuk access modifier bersifat public pada method, sedangkan variabel bersifat private
  * @author Fatur Rahman Stoffel
- * @version 18/03/2021
+ * @version 18-03-2021
  */
 public class Jobseeker
 {
@@ -166,14 +166,21 @@ public class Jobseeker
         public void setJoinDate(Calendar JoinDate){
             this.joinDate = joinDate; //this digunakan karena nama parameter method sama dengan nama instance variabel class
         }
-        
-        public void setJoinDate(int year, int month, int dayOfMonth){
+
+    /**
+     * Set join date dengan parameter year, month, day of month
+     * @param year
+     * @param month
+     * @param dayOfMonth
+     */
+    public void setJoinDate(int year, int month, int dayOfMonth){
           this.joinDate = new GregorianCalendar(year, month, dayOfMonth);
         }
 
-
-        
-        @Override
+    /**
+     * To String
+     */
+    @Override
         public String toString() {
         if (this.joinDate == null) {
             return "Id = " + getId() + "\nNama = " + getName() + "\nEmail = " + getEmail() + "\nPassword = " + getPassword();

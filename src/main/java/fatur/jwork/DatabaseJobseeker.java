@@ -6,71 +6,92 @@ import java.util.ArrayList;
  * Access modifier bersifat public pada method dan private pada variabel
  * Pada class ini menggunakan getter dengan access modifier public
  * @author Fatur Rahman Stoffel
- * @version 27/03/2021
+ * @version 20/06/2021
  */
 public class DatabaseJobseeker
 {
     private static ArrayList<Jobseeker> JOBSEEKER_DATABASE = new ArrayList<Jobseeker>();
     private static int lastId = 0;
 
-    public static ArrayList<Jobseeker> getDatabaseJobseeker()
-    {
+    /**
+     * Get jobseeker database
+     * @return JOBSEEKER_DATABASE
+     */
+    public static ArrayList<Jobseeker> getJobseekerDatabase() {
         return JOBSEEKER_DATABASE;
     }
 
-    public static int getLastId()
-    {
+    /**
+     * Get last id
+     * @return lastId
+     */
+    public static int getLastId() {
         return lastId;
     }
 
+    /**
+     * Untuk mendapatkan jobseeker dengan menggunakan id
+     * @param id
+     * @return temp
+     * @throws JobSeekerNotFoundException
+     */
     public static Jobseeker getJobseekerById(int id) throws JobSeekerNotFoundException {
-        Jobseeker a = null;
-        try{for (Jobseeker jobseeker : JOBSEEKER_DATABASE) {
+        Jobseeker temp = null;
+        for (Jobseeker jobseeker : JOBSEEKER_DATABASE) {
             if (id == jobseeker.getId()) {
-                a = jobseeker;
+                temp = jobseeker;
+                return temp;
             }
-        }}
-        catch (Exception b){
-            throw new JobSeekerNotFoundException(id);}
-        return a;
+        }
+        throw new JobSeekerNotFoundException(id);
     }
 
+    /**
+     * Untuk menambahkan jobseeker
+     * @param jobseeker
+     * @return boolean
+     * @throws EmailAlreadyExistsException
+     */
     public static boolean addJobseeker(Jobseeker jobseeker) throws EmailAlreadyExistsException {
-        for (Jobseeker js : JOBSEEKER_DATABASE) {
-            if (jobseeker.getEmail() == js.getEmail()) {
+        for (Jobseeker jobseeker1 : JOBSEEKER_DATABASE) {
+            if (jobseeker1.getEmail().equals(jobseeker.getEmail())) {
                 throw new EmailAlreadyExistsException(jobseeker);
             }
         }
         JOBSEEKER_DATABASE.add(jobseeker);
         lastId = jobseeker.getId();
         return true;
-
     }
-    public static Jobseeker getJobseekerLogin(String email, String password){
-        for (Jobseeker jobseeker : JOBSEEKER_DATABASE){
-            if (jobseeker.getEmail().equals(email) && jobseeker.getPassword().equals(password))
-            {
+
+    /**
+     * Untuk remove jobseeker
+     * @param id
+     * @return boolean
+     * @throws JobSeekerNotFoundException
+     */
+    public static boolean removeJobseeker(int id) throws JobSeekerNotFoundException {
+        for (Jobseeker jobseeker : JOBSEEKER_DATABASE) {
+            if (jobseeker.getId() == jobseeker.getId()) {
+                JOBSEEKER_DATABASE.remove(jobseeker);
+                return true;
+            }
+            throw new JobSeekerNotFoundException(id);
+        }
+        return false;
+    }
+
+    /**
+     * Untuk mendaptkan parameter login dari jobseeker
+     * @param email
+     * @param password
+     */
+    public static Jobseeker getJobseekerLogin(String email, String password) {
+        for (Jobseeker jobseeker : JOBSEEKER_DATABASE) {
+            if (jobseeker.getEmail().equals(email) && jobseeker.getPassword().equals(password)) {
                 return jobseeker;
             }
         }
         return null;
-    }
-
-    public static boolean removeJobseeker(int id) throws JobSeekerNotFoundException
-    {
-        boolean status = false;
-        for (Jobseeker element: JOBSEEKER_DATABASE) {
-            if (element.getId() == id){
-                JOBSEEKER_DATABASE.remove(element);
-                status = true;
-                break;
-            }
-        }
-        if(!status){
-            throw new JobSeekerNotFoundException(id);
-        }
-        return status;
-
     }
 
 

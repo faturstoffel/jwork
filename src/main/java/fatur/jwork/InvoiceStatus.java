@@ -10,18 +10,22 @@ public enum InvoiceStatus
     OnGoing("On Going"),
     Finished("Finished"),
     Cancelled("Cancelled");
-    
+
     private String status;
+
+    /**
+     * Konstruktor untuk class InvoiceStatus
+     * @param status
+     */
     InvoiceStatus(String status){
      this.status = status;   
     }
-    
-    @Override // Berfungsi untuk memberitahu kompiler, bahwa elemen merupakan sebuah override
+
+    /**
+     * To String
+     * @return
+     */
     public String toString(){
-      return status;   
+      return status;
     }
-    
-    
-        
-    
 }

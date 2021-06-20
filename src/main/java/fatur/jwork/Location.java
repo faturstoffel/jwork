@@ -4,7 +4,7 @@ package fatur.jwork;
  * Class ini digunakan mengatur data dari lokasi
  * untuk access modifier bersifat public pada method, sedangkan variabel bersifat private 
  * @author Fatur Rahman Stoffel
- * @version 18/03/21
+ * @version 18-03-21
  */
 public class Location
 {

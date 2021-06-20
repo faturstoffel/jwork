@@ -1,79 +1,75 @@
 package fatur.jwork;
 import java.util.ArrayList;
 /**
- * Write a description of class DatabaseBonus here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * Class DatabaseBonus, yang berfungsi sebagai database dari bonus yang ada
+ * @author Fatur Rahman Stoffel
+ * @version 20-06-2021
  */
+
 public class DatabaseBonus
 {
     private static ArrayList<Bonus> BONUS_DATABASE = new ArrayList<Bonus>();
     private static int lastId = 0;
 
-    public static ArrayList<Bonus> getBonusDatabase()
-    {
+    /**
+     * get database bonus
+     * @return BONUS_DATABASE
+     */
+    public static ArrayList<Bonus> getBonusDatabase() {
         return BONUS_DATABASE;
     }
 
-    public static int getLastId()
-    {
+    /**
+     * get last id
+     * @return last id
+     */
+    public static int getLastId() {
         return lastId;
     }
 
-    public static Bonus getBonusById(int id) throws BonusNotFoundException{
+    /**
+     * Untuk mendapatkan bonus dengan menggunakan id
+     * @param id
+     * @return x
+     * @throws BonusNotFoundException
+     */
+    public static Bonus getBonusById(int id) throws BonusNotFoundException {
         Bonus x = null;
-        try{for (Bonus bonus : BONUS_DATABASE) {
+        for (Bonus bonus : BONUS_DATABASE) {
             if (id == bonus.getId()) {
                 x = bonus;
+                return x;
             }
-        }}
-        catch (Exception e){
-            throw new BonusNotFoundException(id);}
+        }
+        if (x == null){
+            throw new BonusNotFoundException(id);
+        }
         return x;
     }
-    public static Bonus getBonusByReferralCode(String referralCode){
-        Bonus temp = null;
+
+    /**
+     * Untuk mendapatkan bonus dengan menggunakan referral code
+     * @param referralCode
+     * @return x
+     */
+    public static Bonus getBonusByReferralCode(String referralCode) {
+        Bonus x = null;
         for (Bonus bonus : BONUS_DATABASE) {
             if (referralCode.equals(bonus.getReferralCode())) {
-                temp = bonus;
+                x = bonus;
             }
         }
-        return temp;
-    }
-    public static boolean activeBonus(int id){
-        boolean temp = false;
-        for (Bonus bonus: BONUS_DATABASE) {
-            if (id == bonus.getId()){
-                temp = bonus.getActive();
-                temp = true;
-            }
-            else{
-                temp =  false;
-            }
-        }
-        return temp;
-    }
-    public static boolean deactiveBonus(int id){
-        boolean temp = false;
-        for (Bonus bonus: BONUS_DATABASE) {
-            if (id == bonus.getId()){
-                temp = bonus.getActive();
-                temp = false;
-            }
-            else{
-                temp = false;
-            }
-        }
-        return temp;
+        return x;
     }
 
-    public static boolean addBonus(Bonus bonus) throws ReferralCodeAlreadyExistsException
-    {
-        for (Bonus bns : BONUS_DATABASE)
-        {
-            if (bonus.getReferralCode() == bns.getReferralCode())
-            {
+    /**
+     * Untuk menambahkan bonus
+     * @param bonus
+     * @throws ReferralCodeAlreadyExistsException
+     */
+    public static boolean addBonus(Bonus bonus) throws ReferralCodeAlreadyExistsException {
+        for (Bonus bonus1 : BONUS_DATABASE) {
+            if (bonus.getReferralCode() == bonus1.getReferralCode()) {
                 throw new ReferralCodeAlreadyExistsException(bonus);
             }
         }
@@ -82,21 +78,55 @@ public class DatabaseBonus
         return true;
     }
 
-    public static boolean removeBonus(int id) throws BonusNotFoundException
-    {
-        boolean status = false;
-        for (Bonus element : BONUS_DATABASE) {
-            if (element.getId() == id) {
-                BONUS_DATABASE.remove(element);
-                status = true;
-                break;
+    /**
+     * Untuk remove bonus
+     * @param id
+     * @throws BonusNotFoundException
+     */
+    public static boolean removeBonus(int id) throws BonusNotFoundException {
+        try {
+            for (Bonus bonus : BONUS_DATABASE) {
+                if (bonus.getId() == id) {
+                    BONUS_DATABASE.remove(bonus);
+                    return true;
+                }
             }
-        }
-        if (!status){
+        } catch (Exception e) {
             throw new BonusNotFoundException(id);
         }
+        return false;
+    }
 
-        return status;
+    /**
+     * Untuk melakukan aktivasi terhadap bonus yang ada
+     * @param id
+     * @return boolean
+     */
+    public static boolean activateBonus(int id) {
+        boolean x = false;
+        for (Bonus bonus : BONUS_DATABASE) {
+            if (id == bonus.getId()) {
+                bonus.setActive(true);
+                x = true;
+            }
+        }
+        return x;
+    }
+
+    /**
+     * Untuk menon-aktifkan bonus yang ada
+     * @param id
+     * @return boolean
+     */
+    public static boolean deactivateBonus(int id) {
+        boolean x = false;
+        for (Bonus bonus : BONUS_DATABASE) {
+            if (id == bonus.getId()) {
+                bonus.setActive(false);
+                x = true;
+            }
+        }
+        return x;
     }
     
 }

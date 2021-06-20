@@ -1,7 +1,18 @@
 package fatur.jwork;
+
+/**
+ * Class FeeCalculator, untuk menghitung total fee dari invoice
+ * @author Fatur Rahman Stoffel
+ * @version 20-06-2021
+ */
+
 public class FeeCalculator implements Runnable{
     private Invoice invoice;
 
+    /**
+     * Konstruktor dari class FeeCalculator
+     * @param invoice
+     */
     public FeeCalculator (Invoice invoice){
         this.invoice = invoice;
     }

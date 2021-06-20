@@ -4,7 +4,7 @@ package fatur.jwork;
  * Pada class ini akan berisi informasi mengenai job yang ada, mulai dari nama rekruiter, hingga kategori
  * Access modifier pada class ini bersifat public untuk method dan private pada variabel
  * @author Fatur Rahman Stoffel
- * @version 18/03/21
+ * @version 18-03-21
  */
 public class Job
 {

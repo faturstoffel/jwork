@@ -5,7 +5,7 @@ package fatur.jwork;
  * dan juga lokasi tempat perekrutan
  * Access modifier dari method bersifat public dan ada variabel yang bersifat private
  * @author Fatur Rahman Stoffel
- * @version 18/03/2021
+ * @version 18-03-2021
  */
 public class Recruiter
 {

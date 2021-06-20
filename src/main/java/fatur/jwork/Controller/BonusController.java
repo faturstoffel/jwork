@@ -2,20 +2,43 @@ package fatur.jwork.Controller;
 import fatur.jwork.*;
 import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
+
+/**
+ * Class BonusController, untuk mengontrol bonus yang terkoneksi dengan jwork android
+ * @author Fatur Rahman Stoffel
+ * @version 20-06-2021
+ */
+
 @RequestMapping("/bonus")
 @RestController
 public class BonusController {
+    /**
+     * Untuk mendapatkan database bonus
+     * @return DatabaseBonus.getBonusDatabase()
+     */
     @RequestMapping(value = "", method = RequestMethod.GET)
     public ArrayList<Bonus> getAllBonus() {
-        return DatabaseBonus.getBonusDatabase();
+        return (DatabaseBonus.getBonusDatabase());
     }
 
-    @RequestMapping(value = "/{referralCode}", method = RequestMethod.GET)
-    public Bonus getBonusByReferralCode(
-            @RequestParam(value = "referralCode") String referralCode) {
+    /**
+     * Untuk mendapatkan bonus dari referral code
+     * @param referralCode
+     * @return DatabaseBonus.getBonusByReferralCode(referralCode)
+     */
+    @RequestMapping(value = "/{referralCode}")
+    public Bonus getBonusByReferralCode(@PathVariable String referralCode){
         return (DatabaseBonus.getBonusByReferralCode(referralCode));
     }
 
+    /**
+     * Add bonus
+     * @param referralCode
+     * @param extraFee
+     * @param minTotalFee
+     * @param active
+     * @throws ReferralCodeAlreadyExistsException
+     */
     @RequestMapping(value = "", method = RequestMethod.POST)
     public Bonus addBonus(
             @RequestParam(value = "referralCode") String referralCode,

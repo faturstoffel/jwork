@@ -78,8 +78,7 @@ public abstract class Invoice
     }
 
     /**
-     *
-     * @return
+     * Untuk mendapatkan payment type
      */
     public abstract PaymentType getPaymentType();
 

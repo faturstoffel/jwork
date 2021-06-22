@@ -84,6 +84,7 @@ public class DatabaseJobseeker
      * Untuk mendaptkan parameter login dari jobseeker
      * @param email
      * @param password
+     * @return jobseeker
      */
     public static Jobseeker getJobseekerLogin(String email, String password) {
         for (Jobseeker jobseeker : JOBSEEKER_DATABASE) {

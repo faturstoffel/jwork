@@ -55,6 +55,7 @@ public class InvoiceController {
     /**
      * Untuk melakukan remove invoice, jika membatalkan
      * @param id
+     * @return DatabaseInvoice.removeInvoice(id)
      */
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public boolean removeInvoice(@PathVariable int id) {
@@ -71,6 +72,7 @@ public class InvoiceController {
      * Untuk mendapatkan invoice dengan status
      * @param id
      * @param status
+     * @return invoice
      */
     @RequestMapping(value = "/invoiceStatus/{id}", method = RequestMethod.PUT)
     public Invoice changeInvoiceStatus(@PathVariable int id,

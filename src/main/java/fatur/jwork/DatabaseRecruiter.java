@@ -62,6 +62,7 @@ public class DatabaseRecruiter {
     /**
      * Untuk mendapatkan recuiter dengan menggunakan id
      * @param id
+     * @return temp
      * @throws RecruiterNotFoundException
      */
     public static Recruiter getRecruiterById(int id) throws RecruiterNotFoundException {

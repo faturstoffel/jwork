@@ -65,6 +65,7 @@ public class DatabaseBonus
     /**
      * Untuk menambahkan bonus
      * @param bonus
+     * @return boolean
      * @throws ReferralCodeAlreadyExistsException
      */
     public static boolean addBonus(Bonus bonus) throws ReferralCodeAlreadyExistsException {
@@ -81,6 +82,7 @@ public class DatabaseBonus
     /**
      * Untuk remove bonus
      * @param id
+     * @return boolean
      * @throws BonusNotFoundException
      */
     public static boolean removeBonus(int id) throws BonusNotFoundException {

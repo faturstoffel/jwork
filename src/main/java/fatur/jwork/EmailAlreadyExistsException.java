@@ -19,6 +19,7 @@ public class EmailAlreadyExistsException extends Exception{
 
     /**
      * Get message
+     * @return error message
      */
     public String getMessage(){
         return super.getMessage() + jobseeker_error.getEmail() + "already exist";

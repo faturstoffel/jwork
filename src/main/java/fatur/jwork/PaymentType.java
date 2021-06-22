@@ -13,6 +13,11 @@ public enum PaymentType {
     PaymentType(String type) {
         this.type = type;
     }
+
+    /**
+     * to String
+     * @return type
+     */
     @Override // Berfungsi untuk memberitahu kompiler, bahwa elemen merupakan sebuah override
     public String toString(){
         return type;

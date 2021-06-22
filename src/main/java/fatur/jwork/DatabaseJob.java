@@ -63,6 +63,7 @@ public class DatabaseJob
     /**
      * method ini digunakan untuk mengambil data job menggunakan id
      * @param id
+     * @return temp
      */
     public static Job getJobById(int id) throws JobNotFoundException {
         Job temp = null;
@@ -80,6 +81,7 @@ public class DatabaseJob
     /**
      * Untuk mendapatkan job dengan menggunakan recruiter
      * @param recruiterId
+     * @return temp
      */
     public static ArrayList<Job> getJobByRecruiter(int recruiterId) {
         ArrayList<Job> temp = null;
@@ -97,6 +99,7 @@ public class DatabaseJob
     /**
      * Untuk mendapatkan job dengan menggunakan kategori
      * @param category
+     * @return temp
      */
     public static ArrayList<Job> getJobByCategory(JobCategory category) {
         ArrayList<Job> temp = new ArrayList<Job>();

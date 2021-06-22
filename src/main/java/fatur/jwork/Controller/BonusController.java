@@ -37,6 +37,7 @@ public class BonusController {
      * @param extraFee
      * @param minTotalFee
      * @param active
+     * @return bonus
      * @throws ReferralCodeAlreadyExistsException
      */
     @RequestMapping(value = "", method = RequestMethod.POST)

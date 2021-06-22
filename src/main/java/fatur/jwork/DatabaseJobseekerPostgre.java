@@ -109,7 +109,7 @@ public class DatabaseJobseekerPostgre {
     /**
      * Untuk melakukan remove jobseeker, beserta query yang akan dieksekusi
      * @param id
-     * @return
+     * @return boolean
      */
     public static boolean removeJobseeker(int id) {
         c = DatabaseConnection.connection();
@@ -130,7 +130,7 @@ public class DatabaseJobseekerPostgre {
      * Untuk proses login, dengan query yang akan dieksekusi
      * @param emailInput
      * @param passwordInput
-     * @return
+     * @return value
      */
     public static Jobseeker getJobseekerLogin(String emailInput, String passwordInput) {
         Jobseeker value = null;

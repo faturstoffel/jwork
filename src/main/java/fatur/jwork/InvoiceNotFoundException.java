@@ -19,6 +19,7 @@ public class InvoiceNotFoundException extends Exception{
 
     /**
      * Get message
+     * @return error message
      */
     public String getMessage() {
         return super.getMessage() + invoice_error + "Not Found";

@@ -40,7 +40,7 @@ public class Job
     /**
     * Berikutnya terdapat method getter bernama getId untuk mengembalikkan atau mendapatkan data id
     * dengan return type int
-    * @return province mengembalikkan nilai didalam variabel id 
+    * @return id mengembalikkan nilai didalam variabel id
     */
     public int getId()
     {
@@ -50,7 +50,7 @@ public class Job
     /**
     * Berikutnya terdapat method getter bernama getName untuk mengembalikkan atau mendapatkan data name
     * dengan return type string
-    * @return province mengembalikkan nilai didalam variabel name
+    * @return name mengembalikkan nilai didalam variabel name
     */
     public String getName()
     {
@@ -60,7 +60,7 @@ public class Job
     /**
     * Berikutnya terdapat method getter bernama getFee untuk mengembalikkan atau mendapatkan data fee
     * dengan return type int
-    * @return province mengembalikkan nilai didalam variabel fee 
+    * @return fee mengembalikkan nilai didalam variabel fee
     */
     public int getFee()
     {
@@ -70,7 +70,7 @@ public class Job
     /**
     * Berikutnya terdapat method getter bernama getCategory untuk mengembalikkan atau mendapatkan data category
     * dengan return type string
-    * @return province mengembalikkan nilai didalam variabel category
+    * @return category mengembalikkan nilai didalam variabel category
     */
     public  JobCategory getCategory()
     {
@@ -80,7 +80,7 @@ public class Job
     /**
     * Berikutnya terdapat method getter bernama getRecruiter untuk mengembalikkan atau mendapatkan data recruiter
     * dengan return type string
-    * @return province mengembalikkan nilai didalam variabel recruiter 
+    * @return recruiter mengembalikkan nilai didalam variabel recruiter
     */
     public Recruiter getRecruiter ()
     {

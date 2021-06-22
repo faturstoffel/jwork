@@ -20,6 +20,7 @@ public class ReferralCodeAlreadyExistsException extends Exception {
 
     /**
      * Get message
+     * @return error message
      */
     public String getMessage(){
         return super.getMessage() + referral_error.getReferralCode() + " already exists.";

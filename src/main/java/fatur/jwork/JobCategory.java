@@ -27,7 +27,6 @@ public enum JobCategory
 
     /**
      * To String
-     * @return
      */
     @Override // Berfungsi untuk memberitahu kompiler, bahwa elemen merupakan sebuah override
     public String toString(){

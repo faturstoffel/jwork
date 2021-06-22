@@ -67,6 +67,7 @@ public class DatabaseInvoice {
     /**
      * Untuk melakukan add invoice
      * @param invoice
+     * @return boolean
      * @throws OngoingInvoiceAlreadyExistsException
      */
     public static boolean addInvoice(Invoice invoice) throws OngoingInvoiceAlreadyExistsException{

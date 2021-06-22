@@ -21,6 +21,7 @@ public class OngoingInvoiceAlreadyExistsException extends Exception{
 
     /**
      * Get message
+     * @return error message
      */
     @Override
     public String getMessage()

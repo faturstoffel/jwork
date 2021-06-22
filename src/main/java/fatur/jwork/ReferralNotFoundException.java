@@ -20,6 +20,7 @@ public class ReferralNotFoundException extends Exception {
 
     /**
      * Get message
+     * @return error message
      */
     public String getMessage(){
         return super.getMessage() + Referral_error + "not found";

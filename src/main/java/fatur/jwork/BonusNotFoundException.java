@@ -20,6 +20,7 @@ public class BonusNotFoundException extends Exception{
 
     /**
      * Get message
+     * @return error message
      */
     public String getMessage() {
         return super.getMessage() + bonus_error + "not found";

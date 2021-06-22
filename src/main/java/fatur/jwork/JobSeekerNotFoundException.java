@@ -20,6 +20,7 @@ public class JobSeekerNotFoundException extends Exception {
 
     /**
      * Get message
+     * @return error message
      */
     public String getMessage() {
         return super.getMessage() + jobseeker_error + "not found";

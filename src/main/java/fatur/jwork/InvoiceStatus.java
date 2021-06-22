@@ -23,7 +23,6 @@ public enum InvoiceStatus
 
     /**
      * To String
-     * @return
      */
     public String toString(){
       return status;
